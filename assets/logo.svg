@@ -1,0 +1,16 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="80" fill="#000000"/>
+  
+  <!-- Bird -->
+  <g transform="translate(20, 15)">
+    <ellipse cx="25" cy="25" rx="20" ry="15" fill="#32CD32"/>
+    <circle cx="30" cy="20" r="3" fill="#000000"/>
+    <path d="M 15 25 Q 10 20 5 25" stroke="#32CD32" stroke-width="2" fill="none"/>
+    <path d="M 35 25 Q 40 20 45 25" stroke="#32CD32" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#C0C0C0" text-anchor="middle">BW</text>
+  <text x="100" y="55" font-family="Arial, sans-serif" font-size="16" fill="#C0C0C0" text-anchor="middle">BIRD APP</text>
+</svg>
