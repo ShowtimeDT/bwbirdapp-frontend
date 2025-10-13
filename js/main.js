@@ -261,7 +261,7 @@ function displayIdentificationResult(result) {
                     <p><strong>Description:</strong> ${description}</p>
                 </div>
                 <button class="add-to-pokedex-btn" onclick="addToPokedex('${commonName}', '${scientificName}', '${result.imageUrl}')">
-                    📚 Add to my Pokédex
+                    📚 Add to collection
                 </button>
             </div>
         `;
