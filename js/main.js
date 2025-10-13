@@ -271,8 +271,8 @@ async function identifySpecies(imageFile) {
         const formData = new FormData();
         formData.append('image', imageFile);
         
-        // Send to backend (using local backend for testing)
-        const backendUrl = 'http://localhost:3000';
+        // Send to backend (using Railway production backend)
+        const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
         const response = await fetch(`${backendUrl}/api/identify`, {
             method: 'POST',
             body: formData
@@ -356,7 +356,7 @@ async function addToPokedex(commonName, scientificName, imageUrl) {
             return;
         }
 
-            const backendUrl = 'http://localhost:3000';
+            const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
         const response = await fetch(`${backendUrl}/api/sightings`, {
             method: 'POST',
             headers: {
@@ -398,7 +398,7 @@ async function addToPokedex(commonName, scientificName, imageUrl) {
 // Load sightings for catalogue
 async function loadSightings() {
     try {
-            const backendUrl = 'http://localhost:3000';
+            const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
         const response = await fetch(`${backendUrl}/api/sightings`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
