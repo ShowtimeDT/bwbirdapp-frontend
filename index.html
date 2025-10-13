@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BWBirdApp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐦 BWBirdApp</h1>
+            <nav>
+                <button id="nav-home" class="nav-btn active">Home</button>
+                <button id="nav-catalogue" class="nav-btn">Catalogue</button>
+                <button id="nav-capture" class="nav-btn">Capture</button>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Home Page -->
+            <section id="home-page" class="page active">
+                <div class="welcome-section">
+                    <h2>Welcome to BWBirdApp!</h2>
+                    <p>Discover, identify, and share your bird sightings with friends.</p>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h3>📸 Capture</h3>
+                            <p>Take photos of birds and get AI-powered identification</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>📚 Catalogue</h3>
+                            <p>View your collection of identified species</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>👥 Friends</h3>
+                            <p>Share sightings and see what friends have found</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Catalogue Page -->
+            <section id="catalogue-page" class="page">
+                <h2>Your Bird Collection</h2>
+                <div id="sightings-list" class="sightings-grid">
+                    <p class="empty-state">No sightings yet. Go capture some birds!</p>
+                </div>
+            </section>
+
+            <!-- Capture Page -->
+            <section id="capture-page" class="page">
+                <h2>Identify a Bird</h2>
+                <div class="capture-container">
+                    <div class="upload-section">
+                        <input type="file" id="image-input" accept="image/*" class="file-input">
+                        <label for="image-input" class="file-label">
+                            📷 Choose Image
+                        </label>
+                        <button id="identify-btn" class="identify-btn" disabled>🔍 Identify Species</button>
+                    </div>
+                    
+                    <div class="preview-section">
+                        <div id="image-preview" class="image-preview">
+                            <p>No image selected</p>
+                        </div>
+                    </div>
+                    
+                    <div id="identification-result" class="result-section" style="display: none;">
+                        <h3>Identification Result</h3>
+                        <div id="result-content"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 BWBirdApp</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
