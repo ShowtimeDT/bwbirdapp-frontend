@@ -203,6 +203,11 @@ function capturePhoto() {
                 
                 // Stop camera
                 stopCamera();
+                
+                // Automatically analyze the captured photo
+                setTimeout(() => {
+                    identifySpecies(file);
+                }, 1000); // Small delay to let UI update
             }
         }, 'image/jpeg', 0.8);
     }
@@ -254,10 +259,12 @@ async function identifySpecies(imageFile) {
     const resultContent = document.getElementById('result-content');
     
     // Show loading state
-    identifyBtn.disabled = true;
-    identifyBtn.textContent = '🔍 Identifying...';
-    resultSection.style.display = 'block';
-    resultContent.innerHTML = '<p>Analyzing image...</p>';
+    if (identifyBtn) {
+        identifyBtn.disabled = true;
+        identifyBtn.textContent = '🔍 Analyzing...';
+    }
+    if (resultSection) resultSection.style.display = 'block';
+    if (resultContent) resultContent.innerHTML = '<p>🤖 AI is analyzing your wildlife photo...</p>';
     
     try {
         // Create FormData for file upload
@@ -279,14 +286,18 @@ async function identifySpecies(imageFile) {
         displayIdentificationResult(result);
         
     } catch (error) {
-        resultContent.innerHTML = `
-            <p style="color: #e74c3c;">❌ Error identifying species: ${error.message}</p>
-            <p>Please try again with a clearer image.</p>
-        `;
+        if (resultContent) {
+            resultContent.innerHTML = `
+                <p style="color: #e74c3c;">❌ Error identifying species: ${error.message}</p>
+                <p>Please try again with a clearer image.</p>
+            `;
+        }
     } finally {
         // Reset button state
-        identifyBtn.disabled = false;
-        identifyBtn.textContent = '🔍 Identify Species';
+        if (identifyBtn) {
+            identifyBtn.disabled = false;
+            identifyBtn.textContent = '🔍 Identify Species';
+        }
     }
 }
 
@@ -295,12 +306,18 @@ function displayIdentificationResult(result) {
     const resultContent = document.getElementById('result-content');
     
     if (result.success && result.identification) {
-        const { species, confidence, description } = result.identification;
+        const { commonName, scientificName, isBird, virginiaMonths, description, confidence } = result.identification;
         
-        // Parse the species to get common and scientific names
-        const speciesMatch = species.match(/^(.+?)\s*\((.+?)\)$/);
-        const commonName = speciesMatch ? speciesMatch[1].trim() : species;
-        const scientificName = speciesMatch ? speciesMatch[2].trim() : species;
+        // Format Virginia months
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const virginiaMonthsText = virginiaMonths ? virginiaMonths.map(month => monthNames[month - 1]).join(', ') : 'Unknown';
+        
+        // Create seasonal indicator
+        const currentMonth = new Date().getMonth() + 1;
+        const isCurrentlyInVirginia = virginiaMonths && virginiaMonths.includes(currentMonth);
+        const seasonalStatus = isCurrentlyInVirginia ? 
+            `<span style="color: #27ae60; font-weight: bold;">✅ Currently in Virginia</span>` : 
+            `<span style="color: #e74c3c; font-weight: bold;">❌ Not currently in Virginia</span>`;
         
         resultContent.innerHTML = `
             <div class="identification-result">
@@ -308,9 +325,15 @@ function displayIdentificationResult(result) {
                 <div class="species-info">
                     <p><strong>Common Name:</strong> ${commonName}</p>
                     <p><strong>Scientific Name:</strong> <em>${scientificName}</em></p>
+                    <p><strong>Type:</strong> ${isBird ? '🐦 Bird' : '🐟 Fish'}</p>
                 </div>
-                <p><strong>Confidence:</strong> ${Math.round(confidence * 100)}%</p>
-                <p><strong>Description:</strong> ${description}</p>
+                <div class="virginia-info">
+                    <h5>📍 Virginia Information</h5>
+                    <p><strong>Active Months:</strong> ${virginiaMonthsText}</p>
+                    <p><strong>Current Status:</strong> ${seasonalStatus}</p>
+                    <p><strong>Description:</strong> ${description}</p>
+                </div>
+                <p><strong>AI Confidence:</strong> ${Math.round(confidence * 100)}%</p>
                 <button class="add-to-pokedex-btn" onclick="addToPokedex('${commonName}', '${scientificName}', '${result.imageUrl}')">
                     📚 Add to my Pokédex
                 </button>
