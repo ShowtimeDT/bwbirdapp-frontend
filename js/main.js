@@ -260,12 +260,14 @@ function setupAuthButtons() {
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
             loginModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         });
     }
     
     if (signupBtn) {
         signupBtn.addEventListener('click', function() {
             signupModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         });
     }
     
@@ -273,12 +275,14 @@ function setupAuthButtons() {
     if (closeLogin) {
         closeLogin.addEventListener('click', function() {
             loginModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         });
     }
     
     if (closeSignup) {
         closeSignup.addEventListener('click', function() {
             signupModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         });
     }
     
@@ -288,6 +292,7 @@ function setupAuthButtons() {
             e.preventDefault();
             loginModal.style.display = 'none';
             signupModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         });
     }
     
@@ -296,6 +301,7 @@ function setupAuthButtons() {
             e.preventDefault();
             signupModal.style.display = 'none';
             loginModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         });
     }
     
@@ -303,9 +309,11 @@ function setupAuthButtons() {
     window.addEventListener('click', function(event) {
         if (event.target === loginModal) {
             loginModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
         if (event.target === signupModal) {
             signupModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
     });
     
@@ -352,6 +360,7 @@ function setupLoginForm() {
                     
                     // Close modal
                     document.getElementById('login-modal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
                     
                     // Clear form
                     loginForm.reset();
@@ -422,6 +431,7 @@ function setupSignupForm() {
                     
                     // Close modal
                     document.getElementById('signup-modal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
                     
                     // Clear form
                     signupForm.reset();
