@@ -310,7 +310,7 @@ main {
     font-size: 0.9rem;
 }
 
-.save-sighting-btn, .add-to-pokedex-btn {
+.add-to-pokedex-btn {
     background-color: #e74c3c;
     color: white;
     border: none;
@@ -323,7 +323,7 @@ main {
     font-weight: bold;
 }
 
-.save-sighting-btn:hover, .add-to-pokedex-btn:hover {
+.add-to-pokedex-btn:hover {
     background-color: #c0392b;
     transform: translateY(-2px);
 }

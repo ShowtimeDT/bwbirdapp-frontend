@@ -1,29 +1,21 @@
 // BWBirdApp Main JavaScript File
 
 // Global state
-let currentUser = null;
 let selectedImage = null;
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('BWBirdApp frontend loaded successfully!');
-    
     // Initialize the application
     initializeApp();
 });
 
 // Initialize the application
 function initializeApp() {
-    console.log('Initializing BWBirdApp...');
-    
     // Set up navigation
     setupNavigation();
     
     // Set up image capture functionality
     setupImageCapture();
-    
-    // Load user data if logged in
-    loadUserData();
 }
 
 // Navigation functionality
@@ -75,7 +67,6 @@ function setupNavigation() {
 function setupImageCapture() {
     const imageInput = document.getElementById('image-input');
     const identifyBtn = document.getElementById('identify-btn');
-    const imagePreview = document.getElementById('image-preview');
     
     // Handle file selection
     imageInput.addEventListener('change', function(event) {
@@ -139,7 +130,6 @@ async function identifySpecies(imageFile) {
         displayIdentificationResult(result);
         
     } catch (error) {
-        console.error('Error identifying species:', error);
         resultContent.innerHTML = `
             <p style="color: #e74c3c;">❌ Error identifying species: ${error.message}</p>
             <p>Please try again with a clearer image.</p>
@@ -229,27 +219,7 @@ async function addToPokedex(commonName, scientificName, imageUrl) {
             throw new Error(errorData.error || 'Failed to add to Pokédex');
         }
     } catch (error) {
-        console.error('Error adding to Pokédex:', error);
         alert(`❌ Failed to add to Pokédex: ${error.message}`);
-    }
-}
-
-// Legacy function for backward compatibility
-async function saveSighting(species, imageUrl) {
-    // Extract scientific name from species string
-    const speciesMatch = species.match(/^(.+?)\s*\((.+?)\)$/);
-    const commonName = speciesMatch ? speciesMatch[1].trim() : species;
-    const scientificName = speciesMatch ? speciesMatch[2].trim() : species;
-    
-    await addToPokedex(commonName, scientificName, imageUrl);
-}
-
-// Load user data
-function loadUserData() {
-    const token = localStorage.getItem('token');
-    if (token) {
-        // TODO: Validate token and load user data
-        console.log('User is logged in');
     }
 }
 
@@ -268,7 +238,7 @@ async function loadSightings() {
             displaySightings(sightings);
         }
     } catch (error) {
-        console.error('Error loading sightings:', error);
+        // Silently handle error - sightings will show empty state
     }
 }
 
@@ -291,26 +261,4 @@ function displaySightings(sightings) {
             </div>
         </div>
     `).join('');
-}
-
-// API helper function
-async function fetchData(endpoint, options = {}) {
-    try {
-        const response = await fetch(`/api/${endpoint}`, {
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                ...options.headers
-            },
-            ...options
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return null;
-    }
 }
