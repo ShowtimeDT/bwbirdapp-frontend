@@ -60,12 +60,35 @@
             <section id="capture-page" class="page">
                 <h2>Identify a Bird</h2>
                 <div class="capture-container">
-                    <div class="upload-section">
+                    <div class="capture-options">
+                        <h3>How would you like to capture your wildlife?</h3>
+                        <div class="capture-buttons">
+                            <button id="camera-btn" class="capture-option-btn">
+                                📷 Take Photo
+                            </button>
+                            <button id="upload-btn" class="capture-option-btn">
+                                📁 Upload Image
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-section" id="upload-section" style="display: none;">
                         <input type="file" id="image-input" accept="image/*" class="file-input">
                         <label for="image-input" class="file-label">
                             📷 Choose Image
                         </label>
                         <button id="identify-btn" class="identify-btn" disabled>🔍 Identify Species</button>
+                    </div>
+                    
+                    <div class="camera-section" id="camera-section" style="display: none;">
+                        <div class="camera-container">
+                            <video id="camera-video" autoplay></video>
+                            <canvas id="camera-canvas" style="display: none;"></canvas>
+                            <div class="camera-controls">
+                                <button id="capture-photo-btn" class="capture-photo-btn">📸 Capture</button>
+                                <button id="retake-btn" class="retake-btn" style="display: none;">🔄 Retake</button>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="preview-section">

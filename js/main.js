@@ -49,23 +49,190 @@ function setupNavigation() {
 function setupImageCapture() {
     const imageInput = document.getElementById('image-input');
     const identifyBtn = document.getElementById('identify-btn');
+    const cameraBtn = document.getElementById('camera-btn');
+    const uploadBtn = document.getElementById('upload-btn');
+    const uploadSection = document.getElementById('upload-section');
+    const cameraSection = document.getElementById('camera-section');
+    const capturePhotoBtn = document.getElementById('capture-photo-btn');
+    const retakeBtn = document.getElementById('retake-btn');
+    
+    // Handle capture option buttons
+    if (cameraBtn) {
+        cameraBtn.addEventListener('click', function() {
+            showCameraSection();
+        });
+    }
+    
+    if (uploadBtn) {
+        uploadBtn.addEventListener('click', function() {
+            showUploadSection();
+        });
+    }
     
     // Handle file selection
-    imageInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            selectedImage = file;
-            displayImagePreview(file);
-            identifyBtn.disabled = false;
-        }
-    });
+    if (imageInput) {
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedImage = file;
+                displayImagePreview(file);
+                identifyBtn.disabled = false;
+            }
+        });
+    }
     
     // Handle identify button click
-    identifyBtn.addEventListener('click', function() {
-        if (selectedImage) {
-            identifySpecies(selectedImage);
-        }
-    });
+    if (identifyBtn) {
+        identifyBtn.addEventListener('click', function() {
+            if (selectedImage) {
+                identifySpecies(selectedImage);
+            }
+        });
+    }
+    
+    // Handle camera capture
+    if (capturePhotoBtn) {
+        capturePhotoBtn.addEventListener('click', function() {
+            capturePhoto();
+        });
+    }
+    
+    // Handle retake
+    if (retakeBtn) {
+        retakeBtn.addEventListener('click', function() {
+            retakePhoto();
+        });
+    }
+}
+
+// Show camera section
+function showCameraSection() {
+    const uploadSection = document.getElementById('upload-section');
+    const cameraSection = document.getElementById('camera-section');
+    
+    if (uploadSection) uploadSection.style.display = 'none';
+    if (cameraSection) cameraSection.style.display = 'block';
+    
+    // Start camera
+    startCamera();
+}
+
+// Show upload section
+function showUploadSection() {
+    const uploadSection = document.getElementById('upload-section');
+    const cameraSection = document.getElementById('camera-section');
+    
+    if (cameraSection) cameraSection.style.display = 'none';
+    if (uploadSection) uploadSection.style.display = 'block';
+    
+    // Stop camera if running
+    stopCamera();
+}
+
+// Start camera
+async function startCamera() {
+    try {
+        const video = document.getElementById('camera-video');
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+            video: { 
+                facingMode: 'environment' // Use back camera on mobile
+            } 
+        });
+        
+        video.srcObject = stream;
+        video.style.display = 'block';
+        
+        // Show capture button
+        const captureBtn = document.getElementById('capture-photo-btn');
+        const retakeBtn = document.getElementById('retake-btn');
+        if (captureBtn) captureBtn.style.display = 'inline-block';
+        if (retakeBtn) retakeBtn.style.display = 'none';
+        
+    } catch (error) {
+        console.error('Error accessing camera:', error);
+        alert('Unable to access camera. Please check permissions and try again.');
+        // Fallback to upload section
+        showUploadSection();
+    }
+}
+
+// Stop camera
+function stopCamera() {
+    const video = document.getElementById('camera-video');
+    if (video && video.srcObject) {
+        const tracks = video.srcObject.getTracks();
+        tracks.forEach(track => track.stop());
+        video.srcObject = null;
+        video.style.display = 'none';
+    }
+}
+
+// Capture photo from camera
+function capturePhoto() {
+    const video = document.getElementById('camera-video');
+    const canvas = document.getElementById('camera-canvas');
+    const captureBtn = document.getElementById('capture-photo-btn');
+    const retakeBtn = document.getElementById('retake-btn');
+    
+    if (video && canvas) {
+        // Set canvas dimensions to match video
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        
+        // Draw video frame to canvas
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        // Convert canvas to blob
+        canvas.toBlob(function(blob) {
+            if (blob) {
+                // Create a File object from the blob
+                const file = new File([blob], 'camera-capture.jpg', { type: 'image/jpeg' });
+                selectedImage = file;
+                
+                // Display preview
+                displayImagePreview(file);
+                
+                // Enable identify button
+                const identifyBtn = document.getElementById('identify-btn');
+                if (identifyBtn) identifyBtn.disabled = false;
+                
+                // Update button states
+                if (captureBtn) captureBtn.style.display = 'none';
+                if (retakeBtn) retakeBtn.style.display = 'inline-block';
+                
+                // Stop camera
+                stopCamera();
+            }
+        }, 'image/jpeg', 0.8);
+    }
+}
+
+// Retake photo
+function retakePhoto() {
+    const video = document.getElementById('camera-video');
+    const captureBtn = document.getElementById('capture-photo-btn');
+    const retakeBtn = document.getElementById('retake-btn');
+    const identifyBtn = document.getElementById('identify-btn');
+    
+    // Clear selected image
+    selectedImage = null;
+    
+    // Reset preview
+    const preview = document.getElementById('image-preview');
+    if (preview) {
+        preview.innerHTML = '<p>No image selected</p>';
+    }
+    
+    // Disable identify button
+    if (identifyBtn) identifyBtn.disabled = true;
+    
+    // Update button states
+    if (captureBtn) captureBtn.style.display = 'inline-block';
+    if (retakeBtn) retakeBtn.style.display = 'none';
+    
+    // Restart camera
+    startCamera();
 }
 
 // Display image preview
