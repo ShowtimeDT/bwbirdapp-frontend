@@ -530,7 +530,7 @@ function setupLoginForm() {
             submitBtn.textContent = 'Logging in...';
             
             try {
-                    const response = await fetch('http://localhost:3000/api/auth/login', {
+                    const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -601,7 +601,7 @@ function setupSignupForm() {
             submitBtn.textContent = 'Creating account...';
             
             try {
-                    const response = await fetch('http://localhost:3000/api/auth/register', {
+                    const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
