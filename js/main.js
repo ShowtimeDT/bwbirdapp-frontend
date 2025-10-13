@@ -30,7 +30,10 @@ function initializeApp() {
 function setupNavigation() {
     const navButtons = document.querySelectorAll('.nav-btn');
     const pages = document.querySelectorAll('.page');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
     
+    // Handle navigation button clicks
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetPage = this.id.replace('nav-', '') + '-page';
@@ -42,8 +45,30 @@ function setupNavigation() {
             // Show target page
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById(targetPage).classList.add('active');
+            
+            // Close mobile menu if open
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         });
     });
+    
+    // Handle hamburger menu toggle
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    }
 }
 
 // Image capture functionality
