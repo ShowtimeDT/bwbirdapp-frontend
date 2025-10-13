@@ -3,6 +3,9 @@
 // Global state
 let selectedImage = null;
 
+// DOM element cache
+const elements = {};
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the application
@@ -11,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize the application
 function initializeApp() {
+    // Cache DOM elements
+    cacheElements();
+    
     // Set up navigation
     setupNavigation();
     
@@ -18,22 +24,37 @@ function initializeApp() {
     setupImageCapture();
 }
 
+// Cache frequently used DOM elements
+function cacheElements() {
+    elements.navButtons = document.querySelectorAll('.nav-btn');
+    elements.pages = document.querySelectorAll('.page');
+    elements.imageInput = document.getElementById('image-input');
+    elements.identifyBtn = document.getElementById('identify-btn');
+    elements.cameraBtn = document.getElementById('camera-btn');
+    elements.uploadBtn = document.getElementById('upload-btn');
+    elements.uploadSection = document.getElementById('upload-section');
+    elements.cameraSection = document.getElementById('camera-section');
+    elements.capturePhotoBtn = document.getElementById('capture-photo-btn');
+    elements.retakeBtn = document.getElementById('retake-btn');
+    elements.video = document.getElementById('camera-video');
+    elements.resultSection = document.getElementById('identification-result');
+    elements.resultContent = document.getElementById('result-content');
+    elements.imagePreview = document.getElementById('image-preview');
+}
+
 // Navigation functionality
 function setupNavigation() {
-    const navButtons = document.querySelectorAll('.nav-btn');
-    const pages = document.querySelectorAll('.page');
-    
     // Handle navigation button clicks
-    navButtons.forEach(button => {
+    elements.navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetPage = this.id.replace('nav-', '') + '-page';
             
             // Update active nav button
-            navButtons.forEach(btn => btn.classList.remove('active'));
+            elements.navButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
             // Show target page
-            pages.forEach(page => page.classList.remove('active'));
+            elements.pages.forEach(page => page.classList.remove('active'));
             document.getElementById(targetPage).classList.add('active');
         });
     });
@@ -41,43 +62,30 @@ function setupNavigation() {
 
 // Image capture functionality
 function setupImageCapture() {
-    const imageInput = document.getElementById('image-input');
-    const identifyBtn = document.getElementById('identify-btn');
-    const cameraBtn = document.getElementById('camera-btn');
-    const uploadBtn = document.getElementById('upload-btn');
-    const uploadSection = document.getElementById('upload-section');
-    const cameraSection = document.getElementById('camera-section');
-    const capturePhotoBtn = document.getElementById('capture-photo-btn');
-    const retakeBtn = document.getElementById('retake-btn');
-    
     // Handle camera/upload button clicks
-    if (cameraBtn) {
-        cameraBtn.addEventListener('click', function() {
-            showCameraSection();
-        });
+    if (elements.cameraBtn) {
+        elements.cameraBtn.addEventListener('click', showCameraSection);
     }
     
-    if (uploadBtn) {
-        uploadBtn.addEventListener('click', function() {
-            showUploadSection();
-        });
+    if (elements.uploadBtn) {
+        elements.uploadBtn.addEventListener('click', showUploadSection);
     }
     
     // Handle file input change
-    if (imageInput) {
-        imageInput.addEventListener('change', function(event) {
+    if (elements.imageInput) {
+        elements.imageInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
                 selectedImage = file;
                 displayImagePreview(file);
-                if (identifyBtn) identifyBtn.disabled = false;
+                if (elements.identifyBtn) elements.identifyBtn.disabled = false;
             }
         });
     }
     
     // Handle identify button click
-    if (identifyBtn) {
-        identifyBtn.addEventListener('click', function() {
+    if (elements.identifyBtn) {
+        elements.identifyBtn.addEventListener('click', function() {
             if (selectedImage) {
                 identifySpecies(selectedImage);
             }
@@ -85,52 +93,39 @@ function setupImageCapture() {
     }
     
     // Handle camera capture
-    if (capturePhotoBtn) {
-        capturePhotoBtn.addEventListener('click', function() {
-            capturePhoto();
-        });
+    if (elements.capturePhotoBtn) {
+        elements.capturePhotoBtn.addEventListener('click', capturePhoto);
     }
     
     // Handle retake button
-    if (retakeBtn) {
-        retakeBtn.addEventListener('click', function() {
-            retakePhoto();
-        });
+    if (elements.retakeBtn) {
+        elements.retakeBtn.addEventListener('click', retakePhoto);
     }
 }
 
 // Show camera section
 function showCameraSection() {
-    const uploadSection = document.getElementById('upload-section');
-    const cameraSection = document.getElementById('camera-section');
-    
-    if (uploadSection) uploadSection.style.display = 'none';
-    if (cameraSection) cameraSection.style.display = 'block';
-    
+    if (elements.uploadSection) elements.uploadSection.style.display = 'none';
+    if (elements.cameraSection) elements.cameraSection.style.display = 'block';
     startCamera();
 }
 
 // Show upload section
 function showUploadSection() {
-    const uploadSection = document.getElementById('upload-section');
-    const cameraSection = document.getElementById('camera-section');
-    
-    if (cameraSection) cameraSection.style.display = 'none';
-    if (uploadSection) uploadSection.style.display = 'block';
-    
+    if (elements.cameraSection) elements.cameraSection.style.display = 'none';
+    if (elements.uploadSection) elements.uploadSection.style.display = 'block';
     stopCamera();
 }
 
 // Start camera
 async function startCamera() {
     try {
-        const video = document.getElementById('camera-video');
         const stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'environment' }
         });
         
-        video.srcObject = stream;
-        video.play();
+        elements.video.srcObject = stream;
+        elements.video.play();
     } catch (error) {
         console.error('Error accessing camera:', error);
         alert('Unable to access camera. Please check permissions.');
@@ -139,24 +134,22 @@ async function startCamera() {
 
 // Stop camera
 function stopCamera() {
-    const video = document.getElementById('camera-video');
-    if (video.srcObject) {
-        const tracks = video.srcObject.getTracks();
+    if (elements.video && elements.video.srcObject) {
+        const tracks = elements.video.srcObject.getTracks();
         tracks.forEach(track => track.stop());
-        video.srcObject = null;
+        elements.video.srcObject = null;
     }
 }
 
 // Capture photo from camera
 function capturePhoto() {
-    const video = document.getElementById('camera-video');
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    canvas.width = elements.video.videoWidth;
+    canvas.height = elements.video.videoHeight;
     
-    ctx.drawImage(video, 0, 0);
+    ctx.drawImage(elements.video, 0, 0);
     
     canvas.toBlob(function(blob) {
         const file = new File([blob], 'captured-photo.jpg', { type: 'image/jpeg' });
@@ -175,13 +168,8 @@ function capturePhoto() {
 
 // Retake photo
 function retakePhoto() {
-    const video = document.getElementById('camera-video');
-    const captureBtn = document.getElementById('capture-photo-btn');
-    const retakeBtn = document.getElementById('retake-btn');
-    
-    if (captureBtn) captureBtn.style.display = 'block';
-    if (retakeBtn) retakeBtn.style.display = 'none';
-    
+    if (elements.capturePhotoBtn) elements.capturePhotoBtn.style.display = 'block';
+    if (elements.retakeBtn) elements.retakeBtn.style.display = 'none';
     startCamera();
 }
 
@@ -189,9 +177,8 @@ function retakePhoto() {
 function displayImagePreview(file) {
     const reader = new FileReader();
     reader.onload = function(e) {
-        const preview = document.getElementById('image-preview');
-        if (preview) {
-            preview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto;">`;
+        if (elements.imagePreview) {
+            elements.imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto;">`;
         }
     };
     reader.readAsDataURL(file);
@@ -199,17 +186,13 @@ function displayImagePreview(file) {
 
 // Identify species using AI
 async function identifySpecies(imageFile) {
-    const identifyBtn = document.getElementById('identify-btn');
-    const resultSection = document.getElementById('identification-result');
-    const resultContent = document.getElementById('result-content');
-    
     // Show loading state
-    if (identifyBtn) {
-        identifyBtn.disabled = true;
-        identifyBtn.textContent = '🔍 Analyzing...';
+    if (elements.identifyBtn) {
+        elements.identifyBtn.disabled = true;
+        elements.identifyBtn.textContent = '🔍 Analyzing...';
     }
-    if (resultSection) resultSection.style.display = 'block';
-    if (resultContent) resultContent.innerHTML = '<p>🤖 AI is analyzing your wildlife photo...</p>';
+    if (elements.resultSection) elements.resultSection.style.display = 'block';
+    if (elements.resultContent) elements.resultContent.innerHTML = '<p>🤖 AI is analyzing your wildlife photo...</p>';
     
     try {
         // Create FormData for file upload
@@ -231,24 +214,23 @@ async function identifySpecies(imageFile) {
         displayIdentificationResult(result);
         
     } catch (error) {
-        if (resultContent) {
-            resultContent.innerHTML = `
+        if (elements.resultContent) {
+            elements.resultContent.innerHTML = `
                 <p style="color: #e74c3c;">❌ Error identifying species: ${error.message}</p>
                 <p>Please try again with a clearer image.</p>
             `;
         }
     } finally {
         // Reset button state
-        if (identifyBtn) {
-            identifyBtn.disabled = false;
-            identifyBtn.textContent = '🔍 Identify Species';
+        if (elements.identifyBtn) {
+            elements.identifyBtn.disabled = false;
+            elements.identifyBtn.textContent = '🔍 Identify Species';
         }
     }
 }
 
 // Display identification results
 function displayIdentificationResult(result) {
-    const resultContent = document.getElementById('result-content');
     
     if (result.success && result.identification) {
         const { commonName, scientificName, isBird, virginiaMonths, description, confidence } = result.identification;
@@ -264,7 +246,7 @@ function displayIdentificationResult(result) {
             `<span style="color: #27ae60; font-weight: bold;">✅ Currently in Virginia</span>` : 
             `<span style="color: #e74c3c; font-weight: bold;">❌ Not currently in Virginia</span>`;
         
-        resultContent.innerHTML = `
+        elements.resultContent.innerHTML = `
             <div class="identification-result">
                 <h4>🎯 Species Identified!</h4>
                 <div class="species-info">
@@ -284,7 +266,7 @@ function displayIdentificationResult(result) {
             </div>
         `;
     } else {
-        resultContent.innerHTML = `
+        elements.resultContent.innerHTML = `
             <p style="color: #e74c3c;">❌ Could not identify species</p>
             <p>Please try with a clearer image of a bird or fish.</p>
         `;
