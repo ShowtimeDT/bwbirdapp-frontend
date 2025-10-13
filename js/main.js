@@ -16,6 +16,9 @@ function initializeApp() {
     
     // Set up image capture functionality
     setupImageCapture();
+    
+    // Set up auth buttons
+    setupAuthButtons();
 }
 
 // Navigation functionality
@@ -237,4 +240,24 @@ function displaySightings(sightings) {
             </div>
         </div>
     `).join('');
+}
+
+// Auth buttons functionality
+function setupAuthButtons() {
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function() {
+            // TODO: Implement login functionality
+            alert('Login functionality coming soon!');
+        });
+    }
+    
+    if (signupBtn) {
+        signupBtn.addEventListener('click', function() {
+            // TODO: Implement signup functionality
+            alert('Signup functionality coming soon!');
+        });
+    }
 }
