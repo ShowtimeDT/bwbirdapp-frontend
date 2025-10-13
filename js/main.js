@@ -333,7 +333,6 @@ function displayIdentificationResult(result) {
                     <p><strong>Current Status:</strong> ${seasonalStatus}</p>
                     <p><strong>Description:</strong> ${description}</p>
                 </div>
-                <p><strong>AI Confidence:</strong> ${Math.round(confidence * 100)}%</p>
                 <button class="add-to-pokedex-btn" onclick="addToPokedex('${commonName}', '${scientificName}', '${result.imageUrl}')">
                     📚 Add to my Pokédex
                 </button>
