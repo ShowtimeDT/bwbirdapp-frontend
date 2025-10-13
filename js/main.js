@@ -189,7 +189,7 @@ async function identifySpecies(imageFile) {
     // Show loading state
     if (elements.identifyBtn) {
         elements.identifyBtn.disabled = true;
-        elements.identifyBtn.textContent = '🔍 Analyzing...';
+        elements.identifyBtn.textContent = 'Analyzing...';
     }
     if (elements.resultSection) elements.resultSection.style.display = 'block';
     if (elements.resultContent) elements.resultContent.innerHTML = '<p>🤖 AI is analyzing your wildlife photo...</p>';
@@ -216,7 +216,7 @@ async function identifySpecies(imageFile) {
     } catch (error) {
         if (elements.resultContent) {
             elements.resultContent.innerHTML = `
-                <p style="color: #e74c3c;">❌ Error identifying species: ${error.message}</p>
+                <p style="color: #e74c3c;">Error identifying species: ${error.message}</p>
                 <p>Please try again with a clearer image.</p>
             `;
         }
@@ -224,7 +224,7 @@ async function identifySpecies(imageFile) {
         // Reset button state
         if (elements.identifyBtn) {
             elements.identifyBtn.disabled = false;
-            elements.identifyBtn.textContent = '🔍 Identify Species';
+            elements.identifyBtn.textContent = 'Identify Species';
         }
     }
 }
@@ -243,31 +243,31 @@ function displayIdentificationResult(result) {
         const currentMonth = new Date().getMonth() + 1;
         const isCurrentlyInVirginia = virginiaMonths && virginiaMonths.includes(currentMonth);
         const seasonalStatus = isCurrentlyInVirginia ? 
-            `<span style="color: #27ae60; font-weight: bold;">✅ Currently in Virginia</span>` : 
-            `<span style="color: #e74c3c; font-weight: bold;">❌ Not currently in Virginia</span>`;
+            `<span style="color: #27ae60; font-weight: bold;">Currently in Virginia</span>` : 
+            `<span style="color: #e74c3c; font-weight: bold;">Not currently in Virginia</span>`;
         
         elements.resultContent.innerHTML = `
             <div class="identification-result">
-                <h4>🎯 Species Identified!</h4>
+                <h4>Species Identified!</h4>
                 <div class="species-info">
                     <p><strong>Common Name:</strong> ${commonName}</p>
                     <p><strong>Scientific Name:</strong> <em>${scientificName}</em></p>
-                    <p><strong>Type:</strong> ${isBird ? '🐦 Bird' : '🐟 Fish'}</p>
+                    <p><strong>Type:</strong> ${isBird ? 'Bird' : 'Fish'}</p>
                 </div>
                 <div class="virginia-info">
-                    <h5>📍 Virginia Information</h5>
+                    <h5>Virginia Information</h5>
                     <p><strong>Active Months:</strong> ${virginiaMonthsText}</p>
                     <p><strong>Current Status:</strong> ${seasonalStatus}</p>
                     <p><strong>Description:</strong> ${description}</p>
                 </div>
                 <button class="add-to-pokedex-btn" onclick="addToPokedex('${commonName}', '${scientificName}', '${result.imageUrl}')">
-                    📚 Add to collection
+                    Add to collection
                 </button>
             </div>
         `;
     } else {
         elements.resultContent.innerHTML = `
-            <p style="color: #e74c3c;">❌ Could not identify species</p>
+            <p style="color: #e74c3c;">Could not identify species</p>
             <p>Please try with a clearer image of a bird or fish.</p>
         `;
     }
