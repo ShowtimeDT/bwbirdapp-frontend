@@ -271,8 +271,8 @@ async function identifySpecies(imageFile) {
         const formData = new FormData();
         formData.append('image', imageFile);
         
-        // Send to backend (using Railway backend)
-        const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
+        // Send to backend (using local backend for testing)
+        const backendUrl = 'http://localhost:3000';
         const response = await fetch(`${backendUrl}/api/identify`, {
             method: 'POST',
             body: formData
@@ -356,7 +356,7 @@ async function addToPokedex(commonName, scientificName, imageUrl) {
             return;
         }
 
-            const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
+            const backendUrl = 'http://localhost:3000';
         const response = await fetch(`${backendUrl}/api/sightings`, {
             method: 'POST',
             headers: {
@@ -398,7 +398,7 @@ async function addToPokedex(commonName, scientificName, imageUrl) {
 // Load sightings for catalogue
 async function loadSightings() {
     try {
-            const backendUrl = 'https://bwbirdapp-backend-production.up.railway.app';
+            const backendUrl = 'http://localhost:3000';
         const response = await fetch(`${backendUrl}/api/sightings`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -530,7 +530,7 @@ function setupLoginForm() {
             submitBtn.textContent = 'Logging in...';
             
             try {
-                    const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/login', {
+                    const response = await fetch('http://localhost:3000/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -601,7 +601,7 @@ function setupSignupForm() {
             submitBtn.textContent = 'Creating account...';
             
             try {
-                    const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/register', {
+                    const response = await fetch('http://localhost:3000/api/auth/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
