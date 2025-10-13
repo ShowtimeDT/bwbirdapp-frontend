@@ -19,6 +19,9 @@ function initializeApp() {
     
     // Set up auth buttons
     setupAuthButtons();
+    
+    // Check authentication status
+    checkAuthStatus();
 }
 
 // Navigation functionality
@@ -246,18 +249,279 @@ function displaySightings(sightings) {
 function setupAuthButtons() {
     const loginBtn = document.getElementById('login-btn');
     const signupBtn = document.getElementById('signup-btn');
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    const closeLogin = document.getElementById('close-login');
+    const closeSignup = document.getElementById('close-signup');
+    const showSignup = document.getElementById('show-signup');
+    const showLogin = document.getElementById('show-login');
     
+    // Open modals
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
-            // TODO: Implement login functionality
-            alert('Login functionality coming soon!');
+            loginModal.style.display = 'block';
         });
     }
     
     if (signupBtn) {
         signupBtn.addEventListener('click', function() {
-            // TODO: Implement signup functionality
-            alert('Signup functionality coming soon!');
+            signupModal.style.display = 'block';
         });
+    }
+    
+    // Close modals
+    if (closeLogin) {
+        closeLogin.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+    }
+    
+    if (closeSignup) {
+        closeSignup.addEventListener('click', function() {
+            signupModal.style.display = 'none';
+        });
+    }
+    
+    // Switch between modals
+    if (showSignup) {
+        showSignup.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'none';
+            signupModal.style.display = 'block';
+        });
+    }
+    
+    if (showLogin) {
+        showLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupModal.style.display = 'none';
+            loginModal.style.display = 'block';
+        });
+    }
+    
+    // Close modals when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+        if (event.target === signupModal) {
+            signupModal.style.display = 'none';
+        }
+    });
+    
+    // Setup form handlers
+    setupLoginForm();
+    setupSignupForm();
+    setupPasswordValidation();
+}
+
+// Login form functionality
+function setupLoginForm() {
+    const loginForm = document.getElementById('login-form');
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const submitBtn = loginForm.querySelector('.submit-btn');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Logging in...';
+            
+            try {
+                const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Store token and user info
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    
+                    // Update UI
+                    updateAuthUI(true, result.user);
+                    
+                    // Close modal
+                    document.getElementById('login-modal').style.display = 'none';
+                    
+                    // Clear form
+                    loginForm.reset();
+                    
+                    alert('Login successful!');
+                } else {
+                    throw new Error(result.error || 'Login failed');
+                }
+            } catch (error) {
+                alert('Login failed: ' + error.message);
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Login';
+            }
+        });
+    }
+}
+
+// Signup form functionality
+function setupSignupForm() {
+    const signupForm = document.getElementById('signup-form');
+    
+    if (signupForm) {
+        signupForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm').value;
+            const submitBtn = signupForm.querySelector('.submit-btn');
+            
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Validate password strength
+            if (!validatePassword(password)) {
+                alert('Password does not meet requirements!');
+                return;
+            }
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating account...';
+            
+            try {
+                const response = await fetch('https://bwbirdapp-backend-production.up.railway.app/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Store token and user info
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    
+                    // Update UI
+                    updateAuthUI(true, result.user);
+                    
+                    // Close modal
+                    document.getElementById('signup-modal').style.display = 'none';
+                    
+                    // Clear form
+                    signupForm.reset();
+                    
+                    alert('Account created successfully!');
+                } else {
+                    throw new Error(result.error || 'Registration failed');
+                }
+            } catch (error) {
+                alert('Registration failed: ' + error.message);
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign Up';
+            }
+        });
+    }
+}
+
+// Password validation
+function setupPasswordValidation() {
+    const passwordInput = document.getElementById('signup-password');
+    
+    if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            updatePasswordRequirements(password);
+        });
+    }
+}
+
+// Update password requirements display
+function updatePasswordRequirements(password) {
+    const requirements = {
+        length: password.length >= 8,
+        lowercase: /[a-z]/.test(password),
+        uppercase: /[A-Z]/.test(password),
+        special: /[0-9!@#$%^&*(),.?":{}|<>]/.test(password)
+    };
+    
+    // Update visual indicators
+    document.getElementById('req-length').className = requirements.length ? 'valid' : 'invalid';
+    document.getElementById('req-lowercase').className = requirements.lowercase ? 'valid' : 'invalid';
+    document.getElementById('req-uppercase').className = requirements.uppercase ? 'valid' : 'invalid';
+    document.getElementById('req-special').className = requirements.special ? 'valid' : 'invalid';
+}
+
+// Validate password strength
+function validatePassword(password) {
+    return password.length >= 8 &&
+           /[a-z]/.test(password) &&
+           /[A-Z]/.test(password) &&
+           /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
+}
+
+// Update authentication UI
+function updateAuthUI(isLoggedIn, user = null) {
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    
+    if (isLoggedIn && user) {
+        // User is logged in
+        loginBtn.textContent = `Welcome, ${user.username}`;
+        loginBtn.style.backgroundColor = '#27ae60';
+        signupBtn.textContent = 'Logout';
+        signupBtn.onclick = logout;
+    } else {
+        // User is not logged in
+        loginBtn.textContent = 'Login';
+        loginBtn.style.backgroundColor = '';
+        loginBtn.onclick = () => document.getElementById('login-modal').style.display = 'block';
+        signupBtn.textContent = 'Sign Up';
+        signupBtn.onclick = () => document.getElementById('signup-modal').style.display = 'block';
+    }
+}
+
+// Logout functionality
+function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    updateAuthUI(false);
+    alert('Logged out successfully!');
+}
+
+// Check if user is logged in on page load
+function checkAuthStatus() {
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+    
+    if (token && user) {
+        try {
+            const userData = JSON.parse(user);
+            updateAuthUI(true, userData);
+        } catch (error) {
+            // Invalid user data, clear it
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            updateAuthUI(false);
+        }
+    } else {
+        updateAuthUI(false);
     }
 }
