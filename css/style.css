@@ -34,62 +34,24 @@ header {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-}
-
-.logo-container {
-    flex: 1;
-    text-align: center;
+    gap: 30px;
 }
 
 .logo {
-    max-height: 120px; /* Bigger logo */
+    max-height: 150px; /* Even bigger logo */
     width: auto;
-    max-width: 300px;
+    max-width: 400px;
+    flex-shrink: 0;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.3s;
-    display: block;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 
 /* Navigation */
 .nav-menu {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    background-color: #000000;
-    padding: 15px 20px;
-    transition: all 0.3s ease;
+    gap: 15px;
+    align-items: center;
 }
 
 .nav-btn {
@@ -365,40 +327,26 @@ footer {
         padding: 0;
     }
     
-    .hamburger {
-        display: flex;
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
     }
     
     .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #000000;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .nav-btn {
-        width: 100%;
-        margin: 5px 0;
-        text-align: center;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
     
     .logo {
-        max-height: 80px;
-        max-width: 200px;
+        max-height: 100px;
+        max-width: 250px;
     }
     
     main {
@@ -418,8 +366,8 @@ footer {
 
 @media (max-width: 480px) {
     .logo {
-        max-height: 50px;
-        max-width: 120px;
+        max-height: 80px;
+        max-width: 200px;
     }
     
     .nav-btn {
