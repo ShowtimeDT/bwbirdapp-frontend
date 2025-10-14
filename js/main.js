@@ -199,7 +199,7 @@ async function identifySpecies(imageFile) {
         elements.identifyBtn.textContent = 'Analyzing...';
     }
     if (elements.resultSection) elements.resultSection.style.display = 'block';
-    if (elements.resultContent) elements.resultContent.innerHTML = '<p>🤖 AI is analyzing your wildlife photo...</p>';
+    if (elements.resultContent) elements.resultContent.innerHTML = '<p>AI is analyzing your wildlife photo...</p>';
     
     try {
         // Create FormData for file upload
