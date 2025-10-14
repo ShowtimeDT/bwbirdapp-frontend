@@ -178,7 +178,14 @@ function displayImagePreview(file) {
     const reader = new FileReader();
     reader.onload = function(e) {
         if (elements.imagePreview) {
-            elements.imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto;">`;
+            elements.imagePreview.src = e.target.result;
+            elements.imagePreview.style.display = 'block';
+            elements.imagePreview.style.maxWidth = '500px';
+            elements.imagePreview.style.maxHeight = '400px';
+            elements.imagePreview.style.borderRadius = '15px';
+            elements.imagePreview.style.margin = '20px auto';
+            elements.imagePreview.style.display = 'block';
+            elements.imagePreview.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
         }
     };
     reader.readAsDataURL(file);
@@ -246,8 +253,12 @@ function displayIdentificationResult(result) {
             `<span style="color: #27ae60; font-weight: bold;">Currently in Virginia</span>` : 
             `<span style="color: #e74c3c; font-weight: bold;">Not currently in Virginia</span>`;
         
+        // Get the current image source
+        const imageSrc = elements.imagePreview ? elements.imagePreview.src : '';
+        
         elements.resultContent.innerHTML = `
             <div class="identification-result">
+                ${imageSrc ? `<img src="${imageSrc}" alt="Identified Species" style="width: 100%; max-width: 400px; height: auto; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">` : ''}
                 <h4>Species Identified!</h4>
                 <div class="species-info">
                     <p><strong>Common Name:</strong> ${commonName}</p>
@@ -269,6 +280,11 @@ function displayIdentificationResult(result) {
         // Show the result section
         if (elements.resultSection) {
             elements.resultSection.style.display = 'block';
+        }
+        
+        // Hide the original photo preview since it's now in the result
+        if (elements.imagePreview) {
+            elements.imagePreview.style.display = 'none';
         }
     } else {
         elements.resultContent.innerHTML = `
