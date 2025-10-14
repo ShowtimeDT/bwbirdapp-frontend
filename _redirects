@@ -1,3 +1,2 @@
-/api/*       https://bwbirdapp-backend-production.up.railway.app/:splat   200
-/capture     /capture.html     200
-/collection  /collection.html  200
+/api/*  https://bwbirdapp-backend-production.up.railway.app/:splat  200
+/*      /index.html  200
