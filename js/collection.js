@@ -1,4 +1,5 @@
-import { fetchCollection } from './api-client.js';
+import { fetchCollection, fetchSightings } from '/js/api-client.js';
+import { onAuth, signInWithEmail } from '/js/auth.js';
 
 const grid = document.getElementById('collection-grid');
 const modal = document.getElementById('bird-modal');
@@ -117,16 +118,30 @@ async function openBirdModal(bird) {
   modalTitle.textContent = bird.commonName;
   modalSightings.innerHTML = '';
   
-  // Show basic info for now (sightings endpoint removed)
-  modalSightings.innerHTML = `
-    <div class="sighting-item">
-      <div class="sighting-info">
-        <p><strong>Count:</strong> ${bird.userData.count} sighting${bird.userData.count > 1 ? 's' : ''}</p>
-        <p><strong>Latest:</strong> ${new Date(bird.userData.latestAt).toLocaleDateString()}</p>
-        ${bird.userData.primaryPhotoUrl ? `<img src="${bird.userData.primaryPhotoUrl}" alt="Primary photo" style="max-width: 200px; margin-top: 10px;">` : ''}
-      </div>
-    </div>
-  `;
+  try {
+    const sightings = await fetchSightings(bird.slug);
+    
+    if (sightings.length === 0) {
+      modalSightings.innerHTML = '<p>No sightings found.</p>';
+    } else {
+      sightings.forEach(sighting => {
+        const sightingDiv = document.createElement('div');
+        sightingDiv.className = 'sighting-item';
+        sightingDiv.innerHTML = `
+          <div class="sighting-image">
+            ${sighting.photoUrl ? `<img src="${sighting.photoUrl}" alt="Sighting">` : '<div class="no-image">No image</div>'}
+          </div>
+          <div class="sighting-info">
+            <p class="sighting-date">${new Date(sighting.createdAt).toLocaleDateString()}</p>
+          </div>
+        `;
+        modalSightings.appendChild(sightingDiv);
+      });
+    }
+  } catch (error) {
+    console.error('Failed to load sightings:', error);
+    modalSightings.innerHTML = '<p>Failed to load sightings.</p>';
+  }
   
   showBirdModal();
 }
@@ -164,5 +179,33 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('bird-modal')?.setAttribute('hidden', '');
   
   await loadVirginiaBirds();
-  await loadCollection();
+  
+  // Check auth and load collection
+  onAuth(async (session) => {
+    if (!session) {
+      console.log('Please sign in to view your collection.');
+      grid.innerHTML = '<div class="login-prompt"><p>Please sign in to view your collection.</p><button onclick="promptLogin()">Sign In</button></div>';
+      return;
+    }
+    
+    try {
+      await loadCollection();
+    } catch (e) {
+      console.error('collection load failed', e);
+      grid.innerHTML = '<div class="error"><p>Failed to load collection.</p></div>';
+    }
+  });
 });
+
+// Global function for login prompt
+window.promptLogin = async function() {
+  const email = prompt('Enter your email to sign in:');
+  if (email) {
+    try {
+      await signInWithEmail(email);
+      alert('Check your email for the magic link!');
+    } catch (e) {
+      alert('Failed to send magic link: ' + e.message);
+    }
+  }
+};

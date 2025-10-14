@@ -1,6 +1,7 @@
 import { isMobile } from './device-id.js';
 import { openNativeCamera, openFilePicker, initNativeInput } from './native-capture.js';
-import { analyzeImage, addSighting } from './api-client.js';
+import { analyzeImage, addSighting } from '/js/api-client.js';
+import { onAuth, signInWithEmail } from '/js/auth.js';
 
 const takeBtn = document.getElementById('btn-take-photo');
 const uploadBtn = document.getElementById('btn-upload-photo');
@@ -57,21 +58,38 @@ initNativeInput(async (blob) => {
 // Add to collection handler
 addBtn?.addEventListener('click', async () => {
   if (!lastBlob || !lastAnalysis?.commonName) return;
-  addBtn.disabled = true; 
-  addBtn.textContent = 'Adding…';
   
-  try {
-    await addSighting({ 
-      blob: lastBlob, 
-      bird: lastAnalysis.slug || lastAnalysis.commonName 
-    });
-    addBtn.textContent = 'Added!';
+  // Check auth first
+  onAuth(async (session) => {
+    if (!session) {
+      const email = prompt('Please sign in to add to collection. Enter your email:');
+      if (email) {
+        try {
+          await signInWithEmail(email);
+          alert('Check your email for the magic link!');
+        } catch (e) {
+          alert('Failed to send magic link: ' + e.message);
+        }
+      }
+      return;
+    }
     
-    // Broadcast collection update event
-    window.dispatchEvent(new CustomEvent('collection:updated'));
-  } catch (e) {
-    console.error(e);
-    addBtn.textContent = 'Failed, try again';
-    addBtn.disabled = false;
-  }
+    addBtn.disabled = true; 
+    addBtn.textContent = 'Adding…';
+    
+    try {
+      await addSighting({ 
+        blob: lastBlob, 
+        bird: lastAnalysis.slug || lastAnalysis.commonName 
+      });
+      addBtn.textContent = 'Added!';
+      
+      // Broadcast collection update event
+      window.dispatchEvent(new CustomEvent('collection:updated'));
+    } catch (e) {
+      console.error(e);
+      addBtn.textContent = 'Failed, try again';
+      addBtn.disabled = false;
+    }
+  });
 });

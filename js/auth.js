@@ -1,27 +1,17 @@
-import { createClient } from '@supabase/supabase-js';
+// Uses Supabase JS via CDN ESM. Exposes a single client and helpers.
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-export const supa = createClient(
-  import.meta.env.VITE_SUPABASE_URL, 
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+export const supa = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export async function getAccessToken() {
   const { data } = await supa.auth.getSession();
   return data?.session?.access_token || null;
 }
 
+// Minimal helpers for UI
 export async function signInWithEmail(email) {
-  const { data, error } = await supa.auth.signInWithOtp({ email });
-  if (error) throw error;
-  return data;
+  return supa.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin } });
 }
-
-export async function signOut() {
-  const { error } = await supa.auth.signOut();
-  if (error) throw error;
-}
-
-export async function getCurrentUser() {
-  const { data: { user } } = await supa.auth.getUser();
-  return user;
-}
+export async function signOut() { return supa.auth.signOut(); }
+export function onAuth(cb) { return supa.auth.onAuthStateChange((_e, session) => cb(session)); }

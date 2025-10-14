@@ -1,4 +1,4 @@
-import { signInWithEmail, signOut, getCurrentUser } from './auth.js';
+import { signInWithEmail, signOut, onAuth } from '/js/auth.js';
 
 const loginSection = document.getElementById('login-section');
 const actionButtons = document.getElementById('action-buttons');
@@ -6,18 +6,14 @@ const loginForm = document.getElementById('login-form');
 const loginStatus = document.getElementById('login-status');
 
 // Check if user is already logged in
-async function checkAuthStatus() {
-  try {
-    const user = await getCurrentUser();
-    if (user) {
+function checkAuthStatus() {
+  onAuth((session) => {
+    if (session) {
       showLoggedInState();
     } else {
       showLoginForm();
     }
-  } catch (error) {
-    console.error('Auth check failed:', error);
-    showLoginForm();
-  }
+  });
 }
 
 // Show login form
@@ -57,15 +53,4 @@ loginForm?.addEventListener('submit', async (e) => {
 // Listen for auth state changes
 window.addEventListener('load', () => {
   checkAuthStatus();
-});
-
-// Listen for auth state changes from Supabase
-import { supa } from './auth.js';
-
-supa.auth.onAuthStateChange((event, session) => {
-  if (event === 'SIGNED_IN') {
-    showLoggedInState();
-  } else if (event === 'SIGNED_OUT') {
-    showLoginForm();
-  }
 });

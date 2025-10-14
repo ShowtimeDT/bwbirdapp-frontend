@@ -584,6 +584,37 @@ header {
     font-size: 14px;
 }
 
+.login-prompt {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.login-prompt button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-prompt button:hover {
+    background: #0056b3;
+}
+
+.error {
+    text-align: center;
+    padding: 2rem;
+    color: #dc3545;
+    background: #f8d7da;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
 /* Modal Styles */
 .modal[hidden] { 
     display: none !important; 
