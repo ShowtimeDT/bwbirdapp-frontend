@@ -13,9 +13,9 @@
                 <img src="assets/BW Bird App Logo.png" alt="BW Bird App Logo" class="logo">
                 <nav class="nav-menu">
                     <button id="nav-home" class="nav-btn active">Home</button>
-                    <button id="nav-capture" class="nav-btn">Capture</button>
+                    <button id="nav-capture" class="nav-btn">Add to Collection</button>
+                    <button id="nav-catalogue" class="nav-btn">Collection</button>
                     <button id="nav-friends" class="nav-btn">Friends</button>
-                    <button id="nav-catalogue" class="nav-btn">Catalogue</button>
                     <button id="nav-settings" class="nav-btn">Settings</button>
                 </nav>
             </div>
@@ -24,105 +24,95 @@
         <main>
             <!-- Home Page -->
             <section id="home-page" class="page active">
-                <div class="welcome-section">
-                    <h2>Welcome to BWBirdApp!</h2>
+                <div class="home-content">
+                    <h1>Identify a Bird</h1>
                     <p>Discover, identify, and share your bird sightings with friends.</p>
-                    <div class="feature-cards">
-                        <div class="feature-card">
-                            <h3>📸 Capture</h3>
-                            <p>Take photos of birds and get AI-powered identification</p>
+                    <div class="capture-options">
+                        <button class="capture-option-btn" onclick="showCameraSection()">
+                            <span>📷</span> Take photo
+                        </button>
+                        <button class="capture-option-btn" onclick="showUploadSection()">
+                            <span>📤</span> Upload photo
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Capture Page -->
+            <section id="capture-page" class="page">
+                <div class="capture-content">
+                    <h1>Identify a Bird</h1>
+                    
+                    <div class="capture-options">
+                        <button id="camera-btn" class="capture-option-btn active" onclick="showCameraSection()">
+                            <span>📷</span> Take photo
+                        </button>
+                        <button id="upload-btn" class="capture-option-btn" onclick="showUploadSection()">
+                            <span>📤</span> Upload photo
+                        </button>
+                    </div>
+
+                    <!-- Camera Section -->
+                    <div id="camera-section" class="camera-section active">
+                        <video id="camera-video" autoplay></video>
+                        <div class="camera-controls">
+                            <button id="capture-photo-btn" class="capture-photo-btn">Capture Photo</button>
+                            <button id="retake-btn" class="retake-btn" style="display: none;">Retake</button>
                         </div>
-                        <div class="feature-card">
-                            <h3>Catalogue</h3>
-                            <p>View your collection of identified species</p>
+                        <canvas id="capture-canvas" style="display: none;"></canvas>
+                    </div>
+
+                    <!-- Upload Section -->
+                    <div id="upload-section" class="upload-section">
+                        <div class="file-input-wrapper">
+                            <label for="image-input" class="file-input-label">
+                                Upload Image
+                            </label>
+                            <input type="file" id="image-input" accept="image/*">
                         </div>
-                        <div class="feature-card">
-                            <h3>👥 Friends</h3>
-                            <p>Share sightings and see what friends have found</p>
-                        </div>
+                        <img id="image-preview" class="image-preview" style="display: none;" alt="Image preview">
+                    </div>
+
+                    <button id="identify-btn" class="identify-btn" disabled>Identify Species</button>
+
+                    <!-- Results Section -->
+                    <div id="result-section" class="result-section" style="display: none;">
+                        <div id="result-content"></div>
                     </div>
                 </div>
             </section>
 
             <!-- Catalogue Page -->
             <section id="catalogue-page" class="page">
-                <h2>Your Bird Collection</h2>
-                <div id="sightings-list" class="sightings-grid">
-                    <p class="empty-state">No sightings yet. Go capture some birds!</p>
-                </div>
-            </section>
-
-            <!-- Capture Page -->
-            <section id="capture-page" class="page">
-                <h2>Identify a Bird</h2>
-                <div class="capture-container">
-                    <div class="capture-options">
-                        <h3>How would you like to capture your wildlife?</h3>
-                        <div class="capture-buttons">
-                            <button id="camera-btn" class="capture-option-btn">
-                                📷 Take Photo
-                            </button>
-                            <button id="upload-btn" class="capture-option-btn">
-                                Upload Image
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="upload-section" id="upload-section" style="display: none;">
-                        <input type="file" id="image-input" accept="image/*" class="file-input">
-                        <label for="image-input" class="file-label">
-                            📷 Choose Image
-                        </label>
-                        <button id="identify-btn" class="identify-btn" disabled>Identify Species</button>
-                    </div>
-                    
-                    <div class="camera-section" id="camera-section" style="display: none;">
-                        <div class="camera-container">
-                            <video id="camera-video" autoplay></video>
-                            <canvas id="camera-canvas" style="display: none;"></canvas>
-                            <div class="camera-controls">
-                                <button id="capture-photo-btn" class="capture-photo-btn">📸 Capture</button>
-                                <button id="retake-btn" class="retake-btn" style="display: none;">🔄 Retake</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="preview-section">
-                        <div id="image-preview" class="image-preview">
-                            <p>No image selected</p>
-                        </div>
-                    </div>
-                    
-                    <div id="identification-result" class="result-section" style="display: none;">
-                        <h3>Identification Result</h3>
-                        <div id="result-content"></div>
+                <div class="catalogue-content">
+                    <h1>Your Collection</h1>
+                    <div id="sightings-list" class="sightings-grid">
+                        <!-- Sightings will be populated by JavaScript -->
                     </div>
                 </div>
             </section>
 
             <!-- Friends Page -->
             <section id="friends-page" class="page">
-                <div class="welcome-section">
-                    <h2>Friends & Community</h2>
-                    <p>Connect with other bird enthusiasts and share your sightings!</p>
+                <div class="friends-content">
+                    <h1>Friends & Community</h1>
+                    <h2>Connect with Fellow Bird Enthusiasts</h2>
+                    <p>Share your discoveries, see what your friends have found, and build a community of bird watchers.</p>
+                    <p>Coming soon: Friend connections, shared sightings, and community challenges!</p>
                 </div>
             </section>
 
             <!-- Settings Page -->
             <section id="settings-page" class="page">
-                <div class="welcome-section">
-                    <h2>⚙️ Settings</h2>
-                    <p>Manage your account and app preferences.</p>
+                <div class="settings-content">
+                    <h1>Settings</h1>
+                    <p>Customize your BWBirdApp experience and manage your account preferences.</p>
+                    <p>Coming soon: Profile settings, notification preferences, and privacy controls!</p>
                 </div>
             </section>
         </main>
-        
-        <footer>
-            <p>&copy; 2024 BWBirdApp</p>
-        </footer>
     </div>
 
-    
     <script src="js/main.js"></script>
 </body>
 </html>

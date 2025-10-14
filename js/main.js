@@ -37,7 +37,7 @@ function cacheElements() {
     elements.capturePhotoBtn = document.getElementById('capture-photo-btn');
     elements.retakeBtn = document.getElementById('retake-btn');
     elements.video = document.getElementById('camera-video');
-    elements.resultSection = document.getElementById('identification-result');
+    elements.resultSection = document.getElementById('result-section');
     elements.resultContent = document.getElementById('result-content');
     elements.imagePreview = document.getElementById('image-preview');
 }
@@ -265,6 +265,11 @@ function displayIdentificationResult(result) {
                 </button>
             </div>
         `;
+        
+        // Show the result section
+        if (elements.resultSection) {
+            elements.resultSection.style.display = 'block';
+        }
     } else {
         elements.resultContent.innerHTML = `
             <p style="color: #e74c3c;">Could not identify species</p>
