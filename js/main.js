@@ -37,6 +37,17 @@ function initializeApp() {
         forceStopCamera();
     });
     
+    // Additional event listeners for comprehensive camera cleanup
+    window.addEventListener('pagehide', function() {
+        console.log('Page hide event - stopping camera');
+        forceStopCamera();
+    });
+    
+    window.addEventListener('blur', function() {
+        console.log('Window blur event - stopping camera');
+        forceStopCamera();
+    });
+    
     // Periodic check to ensure camera is stopped when it shouldn't be active
     setInterval(function() {
         if (!isCameraActive && currentStream) {
@@ -153,6 +164,12 @@ function showUploadSection() {
 // Start camera
 async function startCamera() {
     try {
+        // If camera already active, return immediately to avoid duplicate streams
+        if (currentStream) {
+            console.log('Camera already active, skipping start');
+            return;
+        }
+        
         // Stop any existing camera first
         stopCamera();
         
@@ -160,9 +177,18 @@ async function startCamera() {
             video: { facingMode: 'environment' }
         });
         
-        // Store the stream reference
+        // Store the stream reference and mark as active
         currentStream = stream;
         isCameraActive = true;
+        
+        // Set up track end handlers to force cleanup if tracks end unexpectedly
+        stream.getTracks().forEach(track => {
+            track.onended = () => {
+                console.log('Track ended unexpectedly, force stopping camera');
+                forceStopCamera();
+            };
+        });
+        
         elements.video.srcObject = stream;
         elements.video.play();
         console.log('Camera started successfully');
@@ -194,14 +220,19 @@ function stopCamera() {
             console.log('Video track stopped:', track.kind);
         });
         elements.video.srcObject = null;
-        elements.video.pause();
     }
     
-    // Force clear video element
+    // Enhanced video element cleanup for Safari and other browsers
     if (elements.video) {
-        elements.video.src = '';
-        elements.video.load();
+        elements.video.pause(); // Ensure video is paused
+        elements.video.srcObject = null; // Clear srcObject
+        elements.video.removeAttribute('src'); // Important for Safari
+        elements.video.load(); // Reload video element
     }
+    
+    // Mark camera as inactive
+    currentStream = null;
+    isCameraActive = false;
     
     console.log('Camera stopped successfully');
 }
