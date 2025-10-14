@@ -116,6 +116,10 @@ header p {
 }
 
 /* Modal Styles */
+.modal[hidden] { 
+    display: none !important; 
+}
+
 .modal {
     position: fixed;
     z-index: 1000;

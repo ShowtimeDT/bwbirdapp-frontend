@@ -114,6 +114,8 @@ function createBirdTile(bird, isFound) {
 
 // Open bird modal with sightings
 async function openBirdModal(bird) {
+  if (!modal) return;
+  
   try {
     const deviceId = getDeviceId();
     const sightings = await fetchSightings(deviceId, bird.slug);
@@ -139,17 +141,19 @@ async function openBirdModal(bird) {
       });
     }
     
-    modal.hidden = false;
+    modal.removeAttribute('hidden');
   } catch (error) {
     console.error('Failed to load sightings:', error);
     modalSightings.innerHTML = '<p>Failed to load sightings.</p>';
-    modal.hidden = false;
+    modal.removeAttribute('hidden');
   }
 }
 
 // Close modal
 function closeModal() {
-  modal.hidden = true;
+  if (!modal) return;
+  modal.setAttribute('hidden', '');
+  if (modalSightings) modalSightings.innerHTML = '';
 }
 
 // Event listeners
@@ -165,6 +169,9 @@ window.addEventListener('collection:updated', () => {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
+  // Force modal closed on first load so no grey bar appears
+  closeModal();
+  
   await loadVirginiaBirds();
   await loadCollection();
 });
