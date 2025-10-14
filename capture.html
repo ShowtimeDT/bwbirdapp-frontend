@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture - BWBirdApp</title>
+    <link rel="stylesheet" href="css/capture.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Identify a Bird</h1>
+        </header>
+        
+        <main>
+            <div class="capture-options">
+                <button id="btn-take-photo" class="capture-btn">Take Photo</button>
+                <button id="btn-upload-photo" class="capture-btn">Upload Photo</button>
+            </div>
+            
+            <input id="native-file-input" type="file" accept="image/*" style="display:none" />
+            
+            <section id="analysis" hidden>
+                <h2>Analysis Result</h2>
+                <div id="analysis-body"></div>
+                <button id="btn-add" disabled>Add to collection</button>
+            </section>
+        </main>
+    </div>
+    
+    <script type="module" src="js/capture.js"></script>
+</body>
+</html>

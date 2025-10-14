@@ -1,0 +1,132 @@
+/* BWBirdApp Capture Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.capture-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.capture-btn {
+    background: #333333;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    min-width: 150px;
+}
+
+.capture-btn:hover {
+    background: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#analysis {
+    background: #333333;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#analysis h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+#analysis-body {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+#analysis-body div {
+    margin-bottom: 10px;
+}
+
+#analysis-body strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#btn-add {
+    background: #27ae60;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn-add:hover:not(:disabled) {
+    background: #2ecc71;
+    transform: translateY(-1px);
+}
+
+#btn-add:disabled {
+    background: #555555;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .capture-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .capture-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,3740 @@
+[
+  {
+    "commonName": "Ring-billed Gull Larus delawarensis",
+    "scientificName": "Larus delawarensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Laughing Gull Leucophaeus atricilla",
+    "scientificName": "Leucophaeus atricilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Avocet Recurvirostra americana",
+    "scientificName": "Recurvirostra americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Willet Tringa semipalmata",
+    "scientificName": "Tringa semipalmata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Shoveler Spatula clypeata",
+    "scientificName": "Spatula clypeata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Fish Crow Corvus ossifragus",
+    "scientificName": "Corvus ossifragus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White Ibis Eudocimus albus",
+    "scientificName": "Eudocimus albus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Black Duck Anas rubripes",
+    "scientificName": "Anas rubripes",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Green-winged Teal Anas crecca",
+    "scientificName": "Anas crecca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tree Swallow Tachycineta bicolor",
+    "scientificName": "Tachycineta bicolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snow Goose Anser caerulescens",
+    "scientificName": "Anser caerulescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Marbled Godwit Limosa fedoa",
+    "scientificName": "Limosa fedoa",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown Pelican Pelecanus occidentalis",
+    "scientificName": "Pelecanus occidentalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-winged Blackbird Agelaius phoeniceus",
+    "scientificName": "Agelaius phoeniceus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Black-backed Gull Larus marinus",
+    "scientificName": "Larus marinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Nighthawk Chordeiles minor",
+    "scientificName": "Chordeiles minor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pine Grosbeak Pinicola enucleator",
+    "scientificName": "Pinicola enucleator",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sanderling Calidris alba",
+    "scientificName": "Calidris alba",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brant Branta bernicla",
+    "scientificName": "Branta bernicla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruddy Duck Oxyura jamaicensis",
+    "scientificName": "Oxyura jamaicensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Royal Tern Thalasseus maximus",
+    "scientificName": "Thalasseus maximus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Canada Goose Branta canadensis",
+    "scientificName": "Branta canadensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Pintail Anas acuta",
+    "scientificName": "Anas acuta",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chimney Swift Chaetura pelagica",
+    "scientificName": "Chaetura pelagica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wilson's Storm-Petrel Oceanites oceanicus",
+    "scientificName": "Oceanites oceanicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snowy Egret Egretta thula",
+    "scientificName": "Egretta thula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Vulture Coragyps atratus",
+    "scientificName": "Coragyps atratus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Grackle Quiscalus quiscula",
+    "scientificName": "Quiscalus quiscula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wood Duck Aix sponsa",
+    "scientificName": "Aix sponsa",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Double-crested Cormorant Nannopterum auritum",
+    "scientificName": "Nannopterum auritum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Sandpiper Calidris mauri",
+    "scientificName": "Calidris mauri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Shearwater Ardenna gravis",
+    "scientificName": "Ardenna gravis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-crowned Night Heron Nycticorax nycticorax",
+    "scientificName": "Nycticorax nycticorax",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "House Finch Haemorhous mexicanus",
+    "scientificName": "Haemorhous mexicanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Boat-tailed Grackle Quiscalus major",
+    "scientificName": "Quiscalus major",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-necked Phalarope Phalaropus lobatus",
+    "scientificName": "Phalaropus lobatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown-headed Cowbird Molothrus ater",
+    "scientificName": "Molothrus ater",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-bellied Whistling-Duck Dendrocygna autumnalis",
+    "scientificName": "Dendrocygna autumnalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Greater Yellowlegs Tringa melanoleuca",
+    "scientificName": "Tringa melanoleuca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sooty Tern Onychoprion fuscatus",
+    "scientificName": "Onychoprion fuscatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Scoter Melanitta americana",
+    "scientificName": "Melanitta americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Bobwhite Colinus virginianus",
+    "scientificName": "Colinus virginianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Killdeer Charadrius vociferus",
+    "scientificName": "Charadrius vociferus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Short-billed Dowitcher Limnodromus griseus",
+    "scientificName": "Limnodromus griseus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-throated Loon Gavia stellata",
+    "scientificName": "Gavia stellata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-cockaded Woodpecker Dryobates borealis",
+    "scientificName": "Dryobates borealis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Bluebird Sialia sialis",
+    "scientificName": "Sialia sialis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Saltmarsh Sparrow Ammospiza caudacuta",
+    "scientificName": "Ammospiza caudacuta",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pine Warbler Setophaga pinus",
+    "scientificName": "Setophaga pinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Cardinal Cardinalis cardinalis",
+    "scientificName": "Cardinalis cardinalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Gallinule Gallinula galeata",
+    "scientificName": "Gallinula galeata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Woodcock Scolopax minor",
+    "scientificName": "Scolopax minor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-rumped Sandpiper Calidris fuscicollis",
+    "scientificName": "Calidris fuscicollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Purple Martin Progne subis",
+    "scientificName": "Progne subis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Rough-winged Swallow Stelgidopteryx serripennis",
+    "scientificName": "Stelgidopteryx serripennis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Dark-eyed Junco Junco hyemalis",
+    "scientificName": "Junco hyemalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Seaside Sparrow Ammospiza maritima",
+    "scientificName": "Ammospiza maritima",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Savannah Sparrow Passerculus sandwichensis",
+    "scientificName": "Passerculus sandwichensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Meadowlark Sturnella magna",
+    "scientificName": "Sturnella magna",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tundra Swan Cygnus columbianus",
+    "scientificName": "Cygnus columbianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Wigeon Mareca americana",
+    "scientificName": "Mareca americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wilson's Phalarope Phalaropus tricolor",
+    "scientificName": "Phalaropus tricolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Spotted Sandpiper Actitis macularius",
+    "scientificName": "Actitis macularius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red Knot Calidris canutus",
+    "scientificName": "Calidris canutus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Atlantic Puffin Fratercula arctica",
+    "scientificName": "Fratercula arctica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Caspian Tern Hydroprogne caspia",
+    "scientificName": "Hydroprogne caspia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Leach's Storm-Petrel Hydrobates leucorhous",
+    "scientificName": "Hydrobates leucorhous",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Little Blue Heron Egretta caerulea",
+    "scientificName": "Egretta caerulea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sharp-shinned Hawk Accipiter striatus",
+    "scientificName": "Accipiter striatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Broad-winged Hawk Buteo platypterus",
+    "scientificName": "Buteo platypterus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Saw-whet Owl Aegolius acadicus",
+    "scientificName": "Aegolius acadicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Crow Corvus brachyrhynchos",
+    "scientificName": "Corvus brachyrhynchos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Carolina Chickadee Poecile carolinensis",
+    "scientificName": "Poecile carolinensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-capped Chickadee Poecile atricapillus",
+    "scientificName": "Poecile atricapillus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruby-crowned Kinglet Corthylio calendula",
+    "scientificName": "Corthylio calendula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "European Starling Sturnus vulgaris",
+    "scientificName": "Sturnus vulgaris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chipping Sparrow Spizella passerina",
+    "scientificName": "Spizella passerina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-throated Sparrow Zonotrichia albicollis",
+    "scientificName": "Zonotrichia albicollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Towhee Pipilo erythrophthalmus",
+    "scientificName": "Pipilo erythrophthalmus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Parula Setophaga americana",
+    "scientificName": "Setophaga americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blackpoll Warbler Setophaga striata",
+    "scientificName": "Setophaga striata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Trumpeter Swan Cygnus buccinator",
+    "scientificName": "Cygnus buccinator",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue-winged Teal Spatula discors",
+    "scientificName": "Spatula discors",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cinnamon Teal Spatula cyanoptera",
+    "scientificName": "Spatula cyanoptera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gadwall Mareca strepera",
+    "scientificName": "Mareca strepera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mallard Anas platyrhynchos",
+    "scientificName": "Anas platyrhynchos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Surf Scoter Melanitta perspicillata",
+    "scientificName": "Melanitta perspicillata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rock Pigeon Columba livia",
+    "scientificName": "Columba livia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mourning Dove Zenaida macroura",
+    "scientificName": "Zenaida macroura",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chuck-will's-widow Antrostomus carolinensis",
+    "scientificName": "Antrostomus carolinensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Whip-poor-will Antrostomus vociferus",
+    "scientificName": "Antrostomus vociferus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Clapper Rail Rallus crepitans",
+    "scientificName": "Rallus crepitans",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sora Porzana carolina",
+    "scientificName": "Porzana carolina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Oystercatcher Haematopus palliatus",
+    "scientificName": "Haematopus palliatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Whimbrel Numenius phaeopus",
+    "scientificName": "Numenius phaeopus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wilson's Snipe Gallinago delicata",
+    "scientificName": "Gallinago delicata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Stilt Sandpiper Calidris himantopus",
+    "scientificName": "Calidris himantopus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Razorbill Alca torda",
+    "scientificName": "Alca torda",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-legged Kittiwake Rissa tridactyla",
+    "scientificName": "Rissa tridactyla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bonaparte's Gull Chroicocephalus philadelphia",
+    "scientificName": "Chroicocephalus philadelphia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Herring Gull Larus smithsonianus",
+    "scientificName": "Larus smithsonianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lesser Black-backed Gull Larus fuscus",
+    "scientificName": "Larus fuscus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Least Tern Sternula antillarum",
+    "scientificName": "Sternula antillarum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Tern Sterna hirundo",
+    "scientificName": "Sterna hirundo",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sandwich Tern Thalasseus sandvicensis",
+    "scientificName": "Thalasseus sandvicensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-capped Petrel Pterodroma hasitata",
+    "scientificName": "Pterodroma hasitata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Anhinga Anhinga anhinga",
+    "scientificName": "Anhinga anhinga",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Blue Heron Ardea herodias",
+    "scientificName": "Ardea herodias",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Harrier Circus hudsonius",
+    "scientificName": "Circus hudsonius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Horned Lark Eremophila alpestris",
+    "scientificName": "Eremophila alpestris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown-headed Nuthatch Sitta pusilla",
+    "scientificName": "Sitta pusilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Song Sparrow Melospiza melodia",
+    "scientificName": "Melospiza melodia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bobolink Dolichonyx oryzivorus",
+    "scientificName": "Dolichonyx oryzivorus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brewer's Blackbird Euphagus cyanocephalus",
+    "scientificName": "Euphagus cyanocephalus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Yellowthroat Geothlypis trichas",
+    "scientificName": "Geothlypis trichas",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Redstart Setophaga ruticilla",
+    "scientificName": "Setophaga ruticilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Magnolia Warbler Setophaga magnolia",
+    "scientificName": "Setophaga magnolia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-throated Green Warbler Setophaga virens",
+    "scientificName": "Setophaga virens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Fulvous Whistling-Duck Dendrocygna bicolor",
+    "scientificName": "Dendrocygna bicolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ross's Goose Anser rossii",
+    "scientificName": "Anser rossii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Greater White-fronted Goose Anser albifrons",
+    "scientificName": "Anser albifrons",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pink-footed Goose Anser brachyrhynchus",
+    "scientificName": "Anser brachyrhynchus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Barnacle Goose Branta leucopsis",
+    "scientificName": "Branta leucopsis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cackling Goose Branta hutchinsii",
+    "scientificName": "Branta hutchinsii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mute Swan Cygnus olor",
+    "scientificName": "Cygnus olor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Garganey Spatula querquedula",
+    "scientificName": "Spatula querquedula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eurasian Wigeon Mareca penelope",
+    "scientificName": "Mareca penelope",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mottled Duck Anas fulvigula",
+    "scientificName": "Anas fulvigula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Canvasback Aythya valisineria",
+    "scientificName": "Aythya valisineria",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Redhead Aythya americana",
+    "scientificName": "Aythya americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ring-necked Duck Aythya collaris",
+    "scientificName": "Aythya collaris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tufted Duck Aythya fuligula",
+    "scientificName": "Aythya fuligula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Greater Scaup Aythya marila",
+    "scientificName": "Aythya marila",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lesser Scaup Aythya affinis",
+    "scientificName": "Aythya affinis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "King Eider Somateria spectabilis",
+    "scientificName": "Somateria spectabilis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Eider Somateria mollissima",
+    "scientificName": "Somateria mollissima",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Harlequin Duck Histrionicus histrionicus",
+    "scientificName": "Histrionicus histrionicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-winged Scoter Melanitta deglandi",
+    "scientificName": "Melanitta deglandi",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Long-tailed Duck Clangula hyemalis",
+    "scientificName": "Clangula hyemalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bufflehead Bucephala albeola",
+    "scientificName": "Bucephala albeola",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Goldeneye Bucephala clangula",
+    "scientificName": "Bucephala clangula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Barrow's Goldeneye Bucephala islandica",
+    "scientificName": "Bucephala islandica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hooded Merganser Lophodytes cucullatus",
+    "scientificName": "Lophodytes cucullatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Merganser Mergus merganser",
+    "scientificName": "Mergus merganser",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-breasted Merganser Mergus serrator",
+    "scientificName": "Mergus serrator",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wild Turkey Meleagris gallopavo",
+    "scientificName": "Meleagris gallopavo",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruffed Grouse Bonasa umbellus",
+    "scientificName": "Bonasa umbellus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-crowned Pigeon Patagioenas leucocephala",
+    "scientificName": "Patagioenas leucocephala",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Passenger Pigeon Ectopistes migratorius",
+    "scientificName": "Ectopistes migratorius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eurasian Collared-Dove Streptopelia decaocto",
+    "scientificName": "Streptopelia decaocto",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Inca Dove Columbina inca",
+    "scientificName": "Columbina inca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Ground Dove Columbina passerina",
+    "scientificName": "Columbina passerina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-winged Dove Zenaida asiatica",
+    "scientificName": "Zenaida asiatica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Groove-billed Ani Crotophaga sulcirostris",
+    "scientificName": "Crotophaga sulcirostris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-billed Cuckoo Coccyzus americanus",
+    "scientificName": "Coccyzus americanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-billed Cuckoo Coccyzus erythropthalmus",
+    "scientificName": "Coccyzus erythropthalmus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mexican Violetear Colibri thalassinus",
+    "scientificName": "Colibri thalassinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rivoli's Hummingbird Eugenes fulgens",
+    "scientificName": "Eugenes fulgens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruby-throated Hummingbird Archilochus colubris",
+    "scientificName": "Archilochus colubris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-chinned Hummingbird Archilochus alexandri",
+    "scientificName": "Archilochus alexandri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Anna's Hummingbird Calypte anna",
+    "scientificName": "Calypte anna",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Calliope Hummingbird Selasphorus calliope",
+    "scientificName": "Selasphorus calliope",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rufous Hummingbird Selasphorus rufus",
+    "scientificName": "Selasphorus rufus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Allen's Hummingbird Selasphorus sasin",
+    "scientificName": "Selasphorus sasin",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Violet-crowned Hummingbird Ramosomyia violiceps",
+    "scientificName": "Ramosomyia violiceps",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Buff-bellied Hummingbird Amazilia yucatanensis",
+    "scientificName": "Amazilia yucatanensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "King Rail Rallus elegans",
+    "scientificName": "Rallus elegans",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Virginia Rail Rallus limicola",
+    "scientificName": "Rallus limicola",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Paint-billed Crake Mustelirallus erythrops",
+    "scientificName": "Mustelirallus erythrops",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Coot Fulica americana",
+    "scientificName": "Fulica americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Purple Gallinule Porphyrio martinica",
+    "scientificName": "Porphyrio martinica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow Rail Coturnicops noveboracensis",
+    "scientificName": "Coturnicops noveboracensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Rail Laterallus jamaicensis",
+    "scientificName": "Laterallus jamaicensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Limpkin Aramus guarauna",
+    "scientificName": "Aramus guarauna",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sandhill Crane Antigone canadensis",
+    "scientificName": "Antigone canadensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-necked Stilt Himantopus mexicanus",
+    "scientificName": "Himantopus mexicanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-bellied Plover Pluvialis squatarola",
+    "scientificName": "Pluvialis squatarola",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Golden-Plover Pluvialis dominica",
+    "scientificName": "Pluvialis dominica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Semipalmated Plover Charadrius semipalmatus",
+    "scientificName": "Charadrius semipalmatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Piping Plover Charadrius melodus",
+    "scientificName": "Charadrius melodus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Lapwing Vanellus vanellus",
+    "scientificName": "Vanellus vanellus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Siberian Sand-Plover Anarhynchus mongolus",
+    "scientificName": "Anarhynchus mongolus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wilson's Plover Anarhynchus wilsonia",
+    "scientificName": "Anarhynchus wilsonia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mountain Plover Anarhynchus montanus",
+    "scientificName": "Anarhynchus montanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snowy Plover Anarhynchus nivosus",
+    "scientificName": "Anarhynchus nivosus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Upland Sandpiper Bartramia longicauda",
+    "scientificName": "Bartramia longicauda",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Long-billed Curlew Numenius americanus",
+    "scientificName": "Numenius americanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bar-tailed Godwit Limosa lapponica",
+    "scientificName": "Limosa lapponica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-tailed Godwit Limosa limosa",
+    "scientificName": "Limosa limosa",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hudsonian Godwit Limosa haemastica",
+    "scientificName": "Limosa haemastica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Long-billed Dowitcher Limnodromus scolopaceus",
+    "scientificName": "Limnodromus scolopaceus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red Phalarope Phalaropus fulicarius",
+    "scientificName": "Phalaropus fulicarius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Terek Sandpiper Xenus cinereus",
+    "scientificName": "Xenus cinereus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Solitary Sandpiper Tringa solitaria",
+    "scientificName": "Tringa solitaria",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lesser Yellowlegs Tringa flavipes",
+    "scientificName": "Tringa flavipes",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruddy Turnstone Arenaria interpres",
+    "scientificName": "Arenaria interpres",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruff Calidris pugnax",
+    "scientificName": "Calidris pugnax",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sharp-tailed Sandpiper Calidris acuminata",
+    "scientificName": "Calidris acuminata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Curlew Sandpiper Calidris ferruginea",
+    "scientificName": "Calidris ferruginea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-necked Stint Calidris ruficollis",
+    "scientificName": "Calidris ruficollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Buff-breasted Sandpiper Calidris subruficollis",
+    "scientificName": "Calidris subruficollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Dunlin Calidris alpina",
+    "scientificName": "Calidris alpina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Purple Sandpiper Calidris maritima",
+    "scientificName": "Calidris maritima",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Baird's Sandpiper Calidris bairdii",
+    "scientificName": "Calidris bairdii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Least Sandpiper Calidris minutilla",
+    "scientificName": "Calidris minutilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pectoral Sandpiper Calidris melanotos",
+    "scientificName": "Calidris melanotos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Semipalmated Sandpiper Calidris pusilla",
+    "scientificName": "Calidris pusilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Long-tailed Jaeger Stercorarius longicaudus",
+    "scientificName": "Stercorarius longicaudus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Parasitic Jaeger Stercorarius parasiticus",
+    "scientificName": "Stercorarius parasiticus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pomarine Jaeger Stercorarius pomarinus",
+    "scientificName": "Stercorarius pomarinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Skua Stercorarius skua",
+    "scientificName": "Stercorarius skua",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "South Polar Skua Stercorarius maccormicki",
+    "scientificName": "Stercorarius maccormicki",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Guillemot Cepphus grylle",
+    "scientificName": "Cepphus grylle",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Dovekie Alle alle",
+    "scientificName": "Alle alle",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Thick-billed Murre Uria lomvia",
+    "scientificName": "Uria lomvia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Murre Uria aalge",
+    "scientificName": "Uria aalge",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ancient Murrelet Synthliboramphus antiquus",
+    "scientificName": "Synthliboramphus antiquus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Little Gull Hydrocoloeus minutus",
+    "scientificName": "Hydrocoloeus minutus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sabine's Gull Xema sabini",
+    "scientificName": "Xema sabini",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-headed Gull Chroicocephalus ridibundus",
+    "scientificName": "Chroicocephalus ridibundus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Franklin's Gull Leucophaeus pipixcan",
+    "scientificName": "Leucophaeus pipixcan",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-tailed Gull Larus crassirostris",
+    "scientificName": "Larus crassirostris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Heermann's Gull Larus heermanni",
+    "scientificName": "Larus heermanni",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Gull Larus canus",
+    "scientificName": "Larus canus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Short-billed Gull Larus brachyrhynchus",
+    "scientificName": "Larus brachyrhynchus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Vega Gull Larus vegae",
+    "scientificName": "Larus vegae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-legged Gull Larus michahellis",
+    "scientificName": "Larus michahellis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Glaucous Gull Larus hyperboreus",
+    "scientificName": "Larus hyperboreus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "California Gull Larus californicus",
+    "scientificName": "Larus californicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Iceland Gull Larus glaucoides",
+    "scientificName": "Larus glaucoides",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Skimmer Rynchops niger",
+    "scientificName": "Rynchops niger",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown Noddy Anous stolidus",
+    "scientificName": "Anous stolidus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bridled Tern Onychoprion anaethetus",
+    "scientificName": "Onychoprion anaethetus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gull-billed Tern Gelochelidon nilotica",
+    "scientificName": "Gelochelidon nilotica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Tern Chlidonias niger",
+    "scientificName": "Chlidonias niger",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-winged Tern Chlidonias leucopterus",
+    "scientificName": "Chlidonias leucopterus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Forster's Tern Sterna forsteri",
+    "scientificName": "Sterna forsteri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Arctic Tern Sterna paradisaea",
+    "scientificName": "Sterna paradisaea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Roseate Tern Sterna dougallii",
+    "scientificName": "Sterna dougallii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Elegant Tern Thalasseus elegans",
+    "scientificName": "Thalasseus elegans",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Flamingo Phoenicopterus ruber",
+    "scientificName": "Phoenicopterus ruber",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pied-billed Grebe Podilymbus podiceps",
+    "scientificName": "Podilymbus podiceps",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Horned Grebe Podiceps auritus",
+    "scientificName": "Podiceps auritus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-necked Grebe Podiceps grisegena",
+    "scientificName": "Podiceps grisegena",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eared Grebe Podiceps nigricollis",
+    "scientificName": "Podiceps nigricollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Grebe Aechmophorus occidentalis",
+    "scientificName": "Aechmophorus occidentalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Clark's Grebe Aechmophorus clarkii",
+    "scientificName": "Aechmophorus clarkii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-tailed Tropicbird Phaethon lepturus",
+    "scientificName": "Phaethon lepturus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-billed Tropicbird Phaethon aethereus",
+    "scientificName": "Phaethon aethereus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pacific Loon Gavia pacifica",
+    "scientificName": "Gavia pacifica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Loon Gavia immer",
+    "scientificName": "Gavia immer",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Atlantic Yellow-nosed Albatross Thalassarche chlororhynchos",
+    "scientificName": "Thalassarche chlororhynchos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-browed Albatross Thalassarche melanophris",
+    "scientificName": "Thalassarche melanophris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-faced Storm-Petrel Pelagodroma marina",
+    "scientificName": "Pelagodroma marina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "European Storm-Petrel Hydrobates pelagicus",
+    "scientificName": "Hydrobates pelagicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Band-rumped Storm-Petrel Hydrobates castro",
+    "scientificName": "Hydrobates castro",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Fulmar Fulmarus glacialis",
+    "scientificName": "Fulmarus glacialis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Trindade Petrel Pterodroma arminjoniana",
+    "scientificName": "Pterodroma arminjoniana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Fea's Petrel Pterodroma feae",
+    "scientificName": "Pterodroma feae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bermuda Petrel Pterodroma cahow",
+    "scientificName": "Pterodroma cahow",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bulwer's Petrel Bulweria bulwerii",
+    "scientificName": "Bulweria bulwerii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cory's Shearwater Calonectris borealis",
+    "scientificName": "Calonectris borealis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Scopoli's Shearwater Calonectris diomedea",
+    "scientificName": "Calonectris diomedea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sooty Shearwater Ardenna grisea",
+    "scientificName": "Ardenna grisea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Manx Shearwater Puffinus puffinus",
+    "scientificName": "Puffinus puffinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sargasso Shearwater Puffinus lherminieri",
+    "scientificName": "Puffinus lherminieri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wood Stork Mycteria americana",
+    "scientificName": "Mycteria americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Magnificent Frigatebird Fregata magnificens",
+    "scientificName": "Fregata magnificens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Gannet Morus bassanus",
+    "scientificName": "Morus bassanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown Booby Sula leucogaster",
+    "scientificName": "Sula leucogaster",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Masked Booby Sula dactylatra",
+    "scientificName": "Sula dactylatra",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Cormorant Phalacrocorax carbo",
+    "scientificName": "Phalacrocorax carbo",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Neotropic Cormorant Nannopterum brasilianum",
+    "scientificName": "Nannopterum brasilianum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Glossy Ibis Plegadis falcinellus",
+    "scientificName": "Plegadis falcinellus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-faced Ibis Plegadis chihi",
+    "scientificName": "Plegadis chihi",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Roseate Spoonbill Platalea ajaja",
+    "scientificName": "Platalea ajaja",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Bittern Botaurus lentiginosus",
+    "scientificName": "Botaurus lentiginosus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Least Bittern Botaurus exilis",
+    "scientificName": "Botaurus exilis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-crowned Night Heron Nyctanassa violacea",
+    "scientificName": "Nyctanassa violacea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tricolored Heron Egretta tricolor",
+    "scientificName": "Egretta tricolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Reddish Egret Egretta rufescens",
+    "scientificName": "Egretta rufescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Little Egret Egretta garzetta",
+    "scientificName": "Egretta garzetta",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Green Heron Butorides virescens",
+    "scientificName": "Butorides virescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Cattle-Egret Ardea ibis",
+    "scientificName": "Ardea ibis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Egret Ardea alba",
+    "scientificName": "Ardea alba",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gray Heron Ardea cinerea",
+    "scientificName": "Ardea cinerea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American White Pelican Pelecanus erythrorhynchos",
+    "scientificName": "Pelecanus erythrorhynchos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Turkey Vulture Cathartes aura",
+    "scientificName": "Cathartes aura",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Osprey Pandion haliaetus",
+    "scientificName": "Pandion haliaetus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-tailed Kite Elanus leucurus",
+    "scientificName": "Elanus leucurus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swallow-tailed Kite Elanoides forficatus",
+    "scientificName": "Elanoides forficatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Golden Eagle Aquila chrysaetos",
+    "scientificName": "Aquila chrysaetos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cooper's Hawk Astur cooperii",
+    "scientificName": "Astur cooperii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Goshawk Astur atricapillus",
+    "scientificName": "Astur atricapillus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Marsh Harrier Circus aeruginosus",
+    "scientificName": "Circus aeruginosus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bald Eagle Haliaeetus leucocephalus",
+    "scientificName": "Haliaeetus leucocephalus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mississippi Kite Ictinia mississippiensis",
+    "scientificName": "Ictinia mississippiensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snail Kite Rostrhamus sociabilis",
+    "scientificName": "Rostrhamus sociabilis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-shouldered Hawk Buteo lineatus",
+    "scientificName": "Buteo lineatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Zone-tailed Hawk Buteo albonotatus",
+    "scientificName": "Buteo albonotatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swainson's Hawk Buteo swainsoni",
+    "scientificName": "Buteo swainsoni",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-tailed Hawk Buteo jamaicensis",
+    "scientificName": "Buteo jamaicensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rough-legged Hawk Buteo lagopus",
+    "scientificName": "Buteo lagopus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ferruginous Hawk Buteo regalis",
+    "scientificName": "Buteo regalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Barn Owl Tyto furcata",
+    "scientificName": "Tyto furcata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Screech-Owl Megascops asio",
+    "scientificName": "Megascops asio",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snowy Owl Bubo scandiacus",
+    "scientificName": "Bubo scandiacus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Burrowing Owl Athene cunicularia",
+    "scientificName": "Athene cunicularia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Barred Owl Strix varia",
+    "scientificName": "Strix varia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Long-eared Owl Asio otus",
+    "scientificName": "Asio otus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Short-eared Owl Asio flammeus",
+    "scientificName": "Asio flammeus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Belted Kingfisher Megaceryle alcyon",
+    "scientificName": "Megaceryle alcyon",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-bellied Sapsucker Sphyrapicus varius",
+    "scientificName": "Sphyrapicus varius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lewis's Woodpecker Melanerpes lewis",
+    "scientificName": "Melanerpes lewis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-headed Woodpecker Melanerpes erythrocephalus",
+    "scientificName": "Melanerpes erythrocephalus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-bellied Woodpecker Melanerpes carolinus",
+    "scientificName": "Melanerpes carolinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Downy Woodpecker Dryobates pubescens",
+    "scientificName": "Dryobates pubescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hairy Woodpecker Dryobates villosus",
+    "scientificName": "Dryobates villosus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pileated Woodpecker Dryocopus pileatus",
+    "scientificName": "Dryocopus pileatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Flicker Colaptes auratus",
+    "scientificName": "Colaptes auratus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Crested Caracara Caracara plancus",
+    "scientificName": "Caracara plancus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Kestrel Falco sparverius",
+    "scientificName": "Falco sparverius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Merlin Falco columbarius",
+    "scientificName": "Falco columbarius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gyrfalcon Falco rusticolus",
+    "scientificName": "Falco rusticolus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Peregrine Falcon Falco peregrinus",
+    "scientificName": "Falco peregrinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Prairie Falcon Falco mexicanus",
+    "scientificName": "Falco mexicanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Olive-sided Flycatcher Contopus cooperi",
+    "scientificName": "Contopus cooperi",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Wood-Pewee Contopus sordidulus",
+    "scientificName": "Contopus sordidulus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Wood-Pewee Contopus virens",
+    "scientificName": "Contopus virens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-bellied Flycatcher Empidonax flaviventris",
+    "scientificName": "Empidonax flaviventris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Acadian Flycatcher Empidonax virescens",
+    "scientificName": "Empidonax virescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Alder Flycatcher Empidonax alnorum",
+    "scientificName": "Empidonax alnorum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Willow Flycatcher Empidonax traillii",
+    "scientificName": "Empidonax traillii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Least Flycatcher Empidonax minimus",
+    "scientificName": "Empidonax minimus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hammond's Flycatcher Empidonax hammondii",
+    "scientificName": "Empidonax hammondii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Dusky Flycatcher Empidonax oberholseri",
+    "scientificName": "Empidonax oberholseri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Flycatcher Empidonax difficilis",
+    "scientificName": "Empidonax difficilis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Phoebe Sayornis phoebe",
+    "scientificName": "Sayornis phoebe",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Say's Phoebe Sayornis saya",
+    "scientificName": "Sayornis saya",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Vermilion Flycatcher Pyrocephalus rubinus",
+    "scientificName": "Pyrocephalus rubinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ash-throated Flycatcher Myiarchus cinerascens",
+    "scientificName": "Myiarchus cinerascens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Crested Flycatcher Myiarchus crinitus",
+    "scientificName": "Myiarchus crinitus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tropical Kingbird Tyrannus melancholicus",
+    "scientificName": "Tyrannus melancholicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Couch's Kingbird Tyrannus couchii",
+    "scientificName": "Tyrannus couchii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Kingbird Tyrannus verticalis",
+    "scientificName": "Tyrannus verticalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Kingbird Tyrannus tyrannus",
+    "scientificName": "Tyrannus tyrannus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gray Kingbird Tyrannus dominicensis",
+    "scientificName": "Tyrannus dominicensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Scissor-tailed Flycatcher Tyrannus forficatus",
+    "scientificName": "Tyrannus forficatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Fork-tailed Flycatcher Tyrannus savana",
+    "scientificName": "Tyrannus savana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-eyed Vireo Vireo griseus",
+    "scientificName": "Vireo griseus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bell's Vireo Vireo bellii",
+    "scientificName": "Vireo bellii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-throated Vireo Vireo flavifrons",
+    "scientificName": "Vireo flavifrons",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue-headed Vireo Vireo solitarius",
+    "scientificName": "Vireo solitarius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Philadelphia Vireo Vireo philadelphicus",
+    "scientificName": "Vireo philadelphicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Warbling Vireo Vireo gilvus",
+    "scientificName": "Vireo gilvus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-eyed Vireo Vireo olivaceus",
+    "scientificName": "Vireo olivaceus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-whiskered Vireo Vireo altiloquus",
+    "scientificName": "Vireo altiloquus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Loggerhead Shrike Lanius ludovicianus",
+    "scientificName": "Lanius ludovicianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Shrike Lanius borealis",
+    "scientificName": "Lanius borealis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue Jay Cyanocitta cristata",
+    "scientificName": "Cyanocitta cristata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-billed Magpie Pica hudsonia",
+    "scientificName": "Pica hudsonia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Common Raven Corvus corax",
+    "scientificName": "Corvus corax",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Boreal Chickadee Poecile hudsonicus",
+    "scientificName": "Poecile hudsonicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tufted Titmouse Baeolophus bicolor",
+    "scientificName": "Baeolophus bicolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bank Swallow Riparia riparia",
+    "scientificName": "Riparia riparia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Violet-green Swallow Tachycineta thalassina",
+    "scientificName": "Tachycineta thalassina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown-chested Martin Progne tapera",
+    "scientificName": "Progne tapera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Barn Swallow Hirundo rustica",
+    "scientificName": "Hirundo rustica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cliff Swallow Petrochelidon pyrrhonota",
+    "scientificName": "Petrochelidon pyrrhonota",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cave Swallow Petrochelidon fulva",
+    "scientificName": "Petrochelidon fulva",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Golden-crowned Kinglet Regulus satrapa",
+    "scientificName": "Regulus satrapa",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-breasted Nuthatch Sitta carolinensis",
+    "scientificName": "Sitta carolinensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-breasted Nuthatch Sitta canadensis",
+    "scientificName": "Sitta canadensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown Creeper Certhia americana",
+    "scientificName": "Certhia americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue-gray Gnatcatcher Polioptila caerulea",
+    "scientificName": "Polioptila caerulea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rock Wren Salpinctes obsoletus",
+    "scientificName": "Salpinctes obsoletus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern House Wren Troglodytes aedon",
+    "scientificName": "Troglodytes aedon",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Winter Wren Troglodytes hiemalis",
+    "scientificName": "Troglodytes hiemalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sedge Wren Cistothorus stellaris",
+    "scientificName": "Cistothorus stellaris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Marsh Wren Cistothorus palustris",
+    "scientificName": "Cistothorus palustris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Carolina Wren Thryothorus ludovicianus",
+    "scientificName": "Thryothorus ludovicianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gray Catbird Dumetella carolinensis",
+    "scientificName": "Dumetella carolinensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brown Thrasher Toxostoma rufum",
+    "scientificName": "Toxostoma rufum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sage Thrasher Oreoscoptes montanus",
+    "scientificName": "Oreoscoptes montanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Mockingbird Mimus polyglottos",
+    "scientificName": "Mimus polyglottos",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mountain Bluebird Sialia currucoides",
+    "scientificName": "Sialia currucoides",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Townsend's Solitaire Myadestes townsendi",
+    "scientificName": "Myadestes townsendi",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Varied Thrush Ixoreus naevius",
+    "scientificName": "Ixoreus naevius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Veery Catharus fuscescens",
+    "scientificName": "Catharus fuscescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gray-cheeked Thrush Catharus minimus",
+    "scientificName": "Catharus minimus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bicknell's Thrush Catharus bicknelli",
+    "scientificName": "Catharus bicknelli",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swainson's Thrush Catharus ustulatus",
+    "scientificName": "Catharus ustulatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hermit Thrush Catharus guttatus",
+    "scientificName": "Catharus guttatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wood Thrush Hylocichla mustelina",
+    "scientificName": "Hylocichla mustelina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Robin Turdus migratorius",
+    "scientificName": "Turdus migratorius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Wheatear Oenanthe oenanthe",
+    "scientificName": "Oenanthe oenanthe",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bohemian Waxwing Bombycilla garrulus",
+    "scientificName": "Bombycilla garrulus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cedar Waxwing Bombycilla cedrorum",
+    "scientificName": "Bombycilla cedrorum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Eastern Yellow Wagtail Motacilla tschutschensis",
+    "scientificName": "Motacilla tschutschensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White Wagtail Motacilla alba",
+    "scientificName": "Motacilla alba",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Pipit Anthus rubescens",
+    "scientificName": "Anthus rubescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Sprague's Pipit Anthus spragueii",
+    "scientificName": "Anthus spragueii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Evening Grosbeak Coccothraustes vespertinus",
+    "scientificName": "Coccothraustes vespertinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Gray-crowned Rosy-Finch Leucosticte tephrocotis",
+    "scientificName": "Leucosticte tephrocotis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Purple Finch Haemorhous purpureus",
+    "scientificName": "Haemorhous purpureus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Redpoll Acanthis flammea",
+    "scientificName": "Acanthis flammea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red Crossbill Loxia curvirostra",
+    "scientificName": "Loxia curvirostra",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-winged Crossbill Loxia leucoptera",
+    "scientificName": "Loxia leucoptera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Pine Siskin Spinus pinus",
+    "scientificName": "Spinus pinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lesser Goldfinch Spinus psaltria",
+    "scientificName": "Spinus psaltria",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Goldfinch Spinus tristis",
+    "scientificName": "Spinus tristis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lapland Longspur Calcarius lapponicus",
+    "scientificName": "Calcarius lapponicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chestnut-collared Longspur Calcarius ornatus",
+    "scientificName": "Calcarius ornatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Smith's Longspur Calcarius pictus",
+    "scientificName": "Calcarius pictus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Snow Bunting Plectrophenax nivalis",
+    "scientificName": "Plectrophenax nivalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bachman's Sparrow Peucaea aestivalis",
+    "scientificName": "Peucaea aestivalis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Grasshopper Sparrow Ammodramus savannarum",
+    "scientificName": "Ammodramus savannarum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Clay-colored Sparrow Spizella pallida",
+    "scientificName": "Spizella pallida",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Field Sparrow Spizella pusilla",
+    "scientificName": "Spizella pusilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Brewer's Sparrow Spizella breweri",
+    "scientificName": "Spizella breweri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-throated Sparrow Amphispiza bilineata",
+    "scientificName": "Amphispiza bilineata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lark Sparrow Chondestes grammacus",
+    "scientificName": "Chondestes grammacus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lark Bunting Calamospiza melanocorys",
+    "scientificName": "Calamospiza melanocorys",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "American Tree Sparrow Spizelloides arborea",
+    "scientificName": "Spizelloides arborea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Fox Sparrow Passerella iliaca",
+    "scientificName": "Passerella iliaca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-crowned Sparrow Zonotrichia leucophrys",
+    "scientificName": "Zonotrichia leucophrys",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Harris's Sparrow Zonotrichia querula",
+    "scientificName": "Zonotrichia querula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Vesper Sparrow Pooecetes gramineus",
+    "scientificName": "Pooecetes gramineus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "LeConte's Sparrow Ammospiza leconteii",
+    "scientificName": "Ammospiza leconteii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Nelson's Sparrow Ammospiza nelsoni",
+    "scientificName": "Ammospiza nelsoni",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Henslow's Sparrow Centronyx henslowii",
+    "scientificName": "Centronyx henslowii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lincoln's Sparrow Melospiza lincolnii",
+    "scientificName": "Melospiza lincolnii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swamp Sparrow Melospiza georgiana",
+    "scientificName": "Melospiza georgiana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Green-tailed Towhee Pipilo chlorurus",
+    "scientificName": "Pipilo chlorurus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Spotted Towhee Pipilo maculatus",
+    "scientificName": "Pipilo maculatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-breasted Chat Icteria virens",
+    "scientificName": "Icteria virens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-headed Blackbird Xanthocephalus xanthocephalus",
+    "scientificName": "Xanthocephalus xanthocephalus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Meadowlark Sturnella neglecta",
+    "scientificName": "Sturnella neglecta",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Orchard Oriole Icterus spurius",
+    "scientificName": "Icterus spurius",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bullock's Oriole Icterus bullockii",
+    "scientificName": "Icterus bullockii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Baltimore Oriole Icterus galbula",
+    "scientificName": "Icterus galbula",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Scott's Oriole Icterus parisorum",
+    "scientificName": "Icterus parisorum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Shiny Cowbird Molothrus bonariensis",
+    "scientificName": "Molothrus bonariensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rusty Blackbird Euphagus carolinus",
+    "scientificName": "Euphagus carolinus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ovenbird Seiurus aurocapilla",
+    "scientificName": "Seiurus aurocapilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Worm-eating Warbler Helmitheros vermivorum",
+    "scientificName": "Helmitheros vermivorum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Louisiana Waterthrush Parkesia motacilla",
+    "scientificName": "Parkesia motacilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Waterthrush Parkesia noveboracensis",
+    "scientificName": "Parkesia noveboracensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bachman's Warbler Vermivora bachmanii",
+    "scientificName": "Vermivora bachmanii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Golden-winged Warbler Vermivora chrysoptera",
+    "scientificName": "Vermivora chrysoptera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue-winged Warbler Vermivora cyanoptera",
+    "scientificName": "Vermivora cyanoptera",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-and-white Warbler Mniotilta varia",
+    "scientificName": "Mniotilta varia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Prothonotary Warbler Protonotaria citrea",
+    "scientificName": "Protonotaria citrea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swainson's Warbler Limnothlypis swainsonii",
+    "scientificName": "Limnothlypis swainsonii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Tennessee Warbler Leiothlypis peregrina",
+    "scientificName": "Leiothlypis peregrina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Orange-crowned Warbler Leiothlypis celata",
+    "scientificName": "Leiothlypis celata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lucy's Warbler Leiothlypis luciae",
+    "scientificName": "Leiothlypis luciae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Nashville Warbler Leiothlypis ruficapilla",
+    "scientificName": "Leiothlypis ruficapilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Virginia's Warbler Leiothlypis virginiae",
+    "scientificName": "Leiothlypis virginiae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Connecticut Warbler Oporornis agilis",
+    "scientificName": "Oporornis agilis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "MacGillivray's Warbler Geothlypis tolmiei",
+    "scientificName": "Geothlypis tolmiei",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mourning Warbler Geothlypis philadelphia",
+    "scientificName": "Geothlypis philadelphia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Kentucky Warbler Geothlypis formosa",
+    "scientificName": "Geothlypis formosa",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Hooded Warbler Setophaga citrina",
+    "scientificName": "Setophaga citrina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Kirtland's Warbler Setophaga kirtlandii",
+    "scientificName": "Setophaga kirtlandii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cape May Warbler Setophaga tigrina",
+    "scientificName": "Setophaga tigrina",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cerulean Warbler Setophaga cerulea",
+    "scientificName": "Setophaga cerulea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bay-breasted Warbler Setophaga castanea",
+    "scientificName": "Setophaga castanea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blackburnian Warbler Setophaga fusca",
+    "scientificName": "Setophaga fusca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow Warbler Setophaga petechia",
+    "scientificName": "Setophaga petechia",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chestnut-sided Warbler Setophaga pensylvanica",
+    "scientificName": "Setophaga pensylvanica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-throated Blue Warbler Setophaga caerulescens",
+    "scientificName": "Setophaga caerulescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Palm Warbler Setophaga palmarum",
+    "scientificName": "Setophaga palmarum",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-rumped Warbler Setophaga coronata",
+    "scientificName": "Setophaga coronata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Yellow-throated Warbler Setophaga dominica",
+    "scientificName": "Setophaga dominica",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Prairie Warbler Setophaga discolor",
+    "scientificName": "Setophaga discolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-throated Gray Warbler Setophaga nigrescens",
+    "scientificName": "Setophaga nigrescens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Townsend's Warbler Setophaga townsendi",
+    "scientificName": "Setophaga townsendi",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Canada Warbler Cardellina canadensis",
+    "scientificName": "Cardellina canadensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Wilson's Warbler Cardellina pusilla",
+    "scientificName": "Cardellina pusilla",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Summer Tanager Piranga rubra",
+    "scientificName": "Piranga rubra",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Scarlet Tanager Piranga olivacea",
+    "scientificName": "Piranga olivacea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Western Tanager Piranga ludoviciana",
+    "scientificName": "Piranga ludoviciana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rose-breasted Grosbeak Pheucticus ludovicianus",
+    "scientificName": "Pheucticus ludovicianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-headed Grosbeak Pheucticus melanocephalus",
+    "scientificName": "Pheucticus melanocephalus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Blue Grosbeak Passerina caerulea",
+    "scientificName": "Passerina caerulea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lazuli Bunting Passerina amoena",
+    "scientificName": "Passerina amoena",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Painted Bunting Passerina ciris",
+    "scientificName": "Passerina ciris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Dickcissel Spiza americana",
+    "scientificName": "Spiza americana",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Horned Owl Bubo virginianus",
+    "scientificName": "Bubo virginianus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bewick's Wren Thryomanes bewickii",
+    "scientificName": "Thryomanes bewickii",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "House Sparrow Passer domesticus",
+    "scientificName": "Passer domesticus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Indigo Bunting Passerina cyanea",
+    "scientificName": "Passerina cyanea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "West Indian Whistling-Duck Dendrocygna arborea",
+    "scientificName": "Dendrocygna arborea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "White-cheeked Pintail Anas bahamensis",
+    "scientificName": "Anas bahamensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ring-necked Pheasant Phasianus colchicus",
+    "scientificName": "Phasianus colchicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "House Crow Corvus splendens",
+    "scientificName": "Corvus splendens",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Monk Parakeet Myiopsitta monachus",
+    "scientificName": "Myiopsitta monachus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Helmeted Guineafowl Numida meleagris",
+    "scientificName": "Numida meleagris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black Swan Cygnus atratus",
+    "scientificName": "Cygnus atratus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Black-necked Swan Cygnus melancoryphus",
+    "scientificName": "Cygnus melancoryphus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Indian Peafowl Pavo cristatus",
+    "scientificName": "Pavo cristatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Emu Dromaius novaehollandiae",
+    "scientificName": "Dromaius novaehollandiae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Bar-headed Goose Anser indicus",
+    "scientificName": "Anser indicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Graylag Goose Anser anser",
+    "scientificName": "Anser anser",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Swan Goose Anser cygnoides",
+    "scientificName": "Anser cygnoides",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Egyptian Goose Alopochen aegyptiaca",
+    "scientificName": "Alopochen aegyptiaca",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ruddy Shelduck Tadorna ferruginea",
+    "scientificName": "Tadorna ferruginea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Muscovy Duck Cairina moschata",
+    "scientificName": "Cairina moschata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Ringed Teal Callonetta leucophrys",
+    "scientificName": "Callonetta leucophrys",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Mandarin Duck Aix galericulata",
+    "scientificName": "Aix galericulata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Golden Pheasant Chrysolophus pictus",
+    "scientificName": "Chrysolophus pictus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Lady Amherst's Pheasant Chrysolophus amherstiae",
+    "scientificName": "Chrysolophus amherstiae",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Green Pheasant Phasianus versicolor",
+    "scientificName": "Phasianus versicolor",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Green Peafowl Pavo muticus",
+    "scientificName": "Pavo muticus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red Junglefowl Gallus gallus",
+    "scientificName": "Gallus gallus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chukar Alectoris chukar",
+    "scientificName": "Alectoris chukar",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "African Collared-Dove Streptopelia roseogrisea",
+    "scientificName": "Streptopelia roseogrisea",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Diamond Dove Geopelia cuneata",
+    "scientificName": "Geopelia cuneata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Chilean Flamingo Phoenicopterus chilensis",
+    "scientificName": "Phoenicopterus chilensis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Cockatiel Nymphicus hollandicus",
+    "scientificName": "Nymphicus hollandicus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rose-ringed Parakeet Psittacula krameri",
+    "scientificName": "Psittacula krameri",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Budgerigar Melopsittacus undulatus",
+    "scientificName": "Melopsittacus undulatus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Rosy-faced Lovebird Agapornis roseicollis",
+    "scientificName": "Agapornis roseicollis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Nanday Parakeet Aratinga nenday",
+    "scientificName": "Aratinga nenday",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Red-masked Parakeet Psittacara erythrogenys",
+    "scientificName": "Psittacara erythrogenys",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Great Tit Parus major",
+    "scientificName": "Parus major",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Northern Red Bishop Euplectes franciscanus",
+    "scientificName": "Euplectes franciscanus",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Zebra Finch Taeniopygia guttata",
+    "scientificName": "Taeniopygia guttata",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Orange-cheeked Waxbill Estrilda melpoda",
+    "scientificName": "Estrilda melpoda",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "European Greenfinch Chloris chloris",
+    "scientificName": "Chloris chloris",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "European Goldfinch Carduelis carduelis",
+    "scientificName": "Carduelis carduelis",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Island Canary Serinus canaria",
+    "scientificName": "Serinus canaria",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  },
+  {
+    "commonName": "Saffron Finch Sicalis flaveola",
+    "scientificName": "Sicalis flaveola",
+    "type": "bird",
+    "description": "",
+    "imageUrl": ""
+  }
+]

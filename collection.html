@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection - BWBirdApp</title>
+    <link rel="stylesheet" href="css/collection.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Collection</h1>
+            <p>Virginia birds you've discovered</p>
+        </header>
+        
+        <main>
+            <div id="collection-grid" class="collection-grid">
+                <!-- Collection tiles will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal for bird sightings -->
+    <div id="bird-modal" class="modal" hidden>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-sightings"></div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/collection.js"></script>
+</body>
+</html>

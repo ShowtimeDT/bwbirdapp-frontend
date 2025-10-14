@@ -12,80 +12,39 @@
             <div class="header-content">
                 <img src="assets/BW Bird App Logo.png" alt="BW Bird App Logo" class="logo">
                 <nav class="nav-menu">
-                    <button id="nav-home" class="nav-btn active">Home</button>
-                    <button id="nav-capture" class="nav-btn">Add to Collection</button>
-                    <button id="nav-catalogue" class="nav-btn">Collection</button>
-                    <button id="nav-friends" class="nav-btn">Friends</button>
-                    <button id="nav-settings" class="nav-btn">Settings</button>
+                    <a href="/" class="nav-btn active">Home</a>
+                    <a href="/capture.html" class="nav-btn">Add to Collection</a>
+                    <a href="/collection.html" class="nav-btn">Collection</a>
                 </nav>
             </div>
         </header>
         
         <main>
-            <!-- Home Page -->
-            <section id="home-page" class="page active">
-                <div class="home-content">
-                    <!-- Home page content will be added later -->
+            <section class="home-content">
+                <h1>Welcome to BWBirdApp</h1>
+                <p>Discover and identify Virginia birds with AI-powered recognition.</p>
+                
+                <div class="action-buttons">
+                    <a href="/capture.html" class="action-btn primary">Identify a Bird</a>
+                    <a href="/collection.html" class="action-btn secondary">View Collection</a>
                 </div>
-            </section>
-
-            <!-- Capture Page -->
-            <section id="capture-page" class="page">
-                <div class="capture-content">
-                    <h1>Identify a Bird</h1>
-                    
-                    <div class="capture-options">
-                        <button id="btn-take-photo" class="capture-option-btn">Take Photo</button>
-                        <button id="btn-upload-photo" class="capture-option-btn">Upload Photo</button>
+                
+                <div class="features">
+                    <div class="feature">
+                        <h3>AI-Powered Identification</h3>
+                        <p>Take a photo and let our AI identify the bird species automatically.</p>
                     </div>
-
-                    <!-- File input for both native camera and file picker -->
-                    <input id="native-file-input" type="file" accept="image/*" style="display:none" />
-                    
-                    <!-- Image preview -->
-                    <img id="photo-preview" alt="" style="display:none" />
-
-                    <button id="identify-btn" class="identify-btn" disabled>Identify Species</button>
-
-                    <!-- Results Section -->
-                    <div id="result-section" class="result-section" style="display: none;">
-                        <div id="result-content"></div>
+                    <div class="feature">
+                        <h3>Virginia Bird Database</h3>
+                        <p>Comprehensive information about birds found in Virginia.</p>
                     </div>
-                </div>
-            </section>
-
-            <!-- Catalogue Page -->
-            <section id="catalogue-page" class="page">
-                <div class="catalogue-content">
-                    <h1>Your Collection</h1>
-                    <div id="sightings-list" class="sightings-grid">
-                        <!-- Sightings will be populated by JavaScript -->
+                    <div class="feature">
+                        <h3>Personal Collection</h3>
+                        <p>Track your bird sightings and build your personal collection.</p>
                     </div>
-                </div>
-            </section>
-
-            <!-- Friends Page -->
-            <section id="friends-page" class="page">
-                <div class="friends-content">
-                    <h1>Friends & Community</h1>
-                    <h2>Connect with Fellow Bird Enthusiasts</h2>
-                    <p>Share your discoveries, see what your friends have found, and build a community of bird watchers.</p>
-                    <p>Coming soon: Friend connections, shared sightings, and community challenges!</p>
-                </div>
-            </section>
-
-            <!-- Settings Page -->
-            <section id="settings-page" class="page">
-                <div class="settings-content">
-                    <h1>Settings</h1>
-                    <p>Customize your BWBirdApp experience and manage your account preferences.</p>
-                    <p>Coming soon: Profile settings, notification preferences, and privacy controls!</p>
                 </div>
             </section>
         </main>
     </div>
-
-    <script type="module" src="js/native-capture.js?v=7"></script>
-    <script src="js/main.js?v=7"></script>
 </body>
 </html>
