@@ -21,8 +21,13 @@ export async function addSighting({ blob, deviceId, commonName }) {
 
 export async function fetchCollection(deviceId) {
   const res = await fetch(`${API_BASE_URL}/api/collection?deviceId=${encodeURIComponent(deviceId)}`);
-  if (!res.ok) throw new Error('collection failed');
-  return res.json();
+  let data;
+  try { data = await res.json(); } catch { /* ignore */ }
+  if (!res.ok) {
+    console.error('collection API error:', data || res.statusText);
+    throw new Error(data?.error || 'collection failed');
+  }
+  return data;
 }
 
 export async function fetchSightings(deviceId, birdSlug) {
