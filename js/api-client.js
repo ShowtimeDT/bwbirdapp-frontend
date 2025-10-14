@@ -1,7 +1,10 @@
+// Backend API base URL
+const API_BASE_URL = 'https://bwbirdapp-backend-production.up.railway.app';
+
 export async function analyzeImage(blob) {
   const fd = new FormData();
   fd.append('image', blob, 'photo.jpg');
-  const res = await fetch('/api/analyze', { method: 'POST', body: fd });
+  const res = await fetch(`${API_BASE_URL}/api/analyze`, { method: 'POST', body: fd });
   if (!res.ok) throw new Error('analyze failed');
   return res.json();
 }
@@ -11,19 +14,19 @@ export async function addSighting({ blob, deviceId, commonName }) {
   fd.append('image', blob, 'photo.jpg');
   fd.append('deviceId', deviceId);
   fd.append('commonName', commonName);
-  const res = await fetch('/api/sightings', { method: 'POST', body: fd });
+  const res = await fetch(`${API_BASE_URL}/api/sightings`, { method: 'POST', body: fd });
   if (!res.ok) throw new Error('add sighting failed');
   return res.json();
 }
 
 export async function fetchCollection(deviceId) {
-  const res = await fetch(`/api/collection?deviceId=${encodeURIComponent(deviceId)}`);
+  const res = await fetch(`${API_BASE_URL}/api/collection?deviceId=${encodeURIComponent(deviceId)}`);
   if (!res.ok) throw new Error('collection failed');
   return res.json();
 }
 
 export async function fetchSightings(deviceId, birdSlug) {
-  const res = await fetch(`/api/sightings?deviceId=${encodeURIComponent(deviceId)}&bird=${encodeURIComponent(birdSlug)}`);
+  const res = await fetch(`${API_BASE_URL}/api/sightings?deviceId=${encodeURIComponent(deviceId)}&bird=${encodeURIComponent(birdSlug)}`);
   if (!res.ok) throw new Error('sightings failed');
   return res.json();
 }
