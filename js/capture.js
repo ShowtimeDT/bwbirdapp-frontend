@@ -64,7 +64,7 @@ addBtn?.addEventListener('click', async () => {
     await addSighting({ 
       blob: lastBlob, 
       deviceId: getDeviceId(), 
-      commonName: lastAnalysis.commonName 
+      bird: lastAnalysis.slug || lastAnalysis.commonName 
     });
     addBtn.textContent = 'Added!';
     
