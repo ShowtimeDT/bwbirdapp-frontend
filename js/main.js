@@ -6,7 +6,9 @@ let processedBlob = null;
 // DOM element cache
 const elements = {};
 
-// Mobile detection
+// Device detection: treats phones AND tablets as mobile devices
+// This includes: iPhones, iPads, iPods, Android phones, Android tablets
+// Desktops/laptops will see desktop version (Upload Photo only)
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // Wait for DOM to be fully loaded
@@ -31,7 +33,8 @@ function initializeApp() {
         module.initNativeCapture(handleImageSelection);
     });
     
-    // Hide Take Photo button on desktop
+    // Hide Take Photo button on desktop/laptop only
+    // Tablets (iPad, Android tablets) are treated as mobile and keep the button
     if (!isMobile) {
         const takeBtn = document.getElementById('btn-take-photo');
         if (takeBtn) takeBtn.style.display = 'none';
@@ -70,10 +73,11 @@ function setupNavigation() {
 
 // Image capture functionality
 function setupImageCapture() {
-    // Handle "Take Photo" button
+    // Handle "Take Photo" button (mobile devices: phones + tablets)
     if (elements.takePhotoBtn) {
         elements.takePhotoBtn.addEventListener('click', function() {
             if (isMobile) {
+                // Opens native camera app on phones and tablets
                 import('./native-capture.js').then(module => {
                     module.openNativeCamera();
                 });
