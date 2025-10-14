@@ -1,9 +1,37 @@
-// js/camera.js - Race-proof camera controller with session management
+// js/camera.js - Race-proof camera controller with device selection
 let currentStream = null;
 let sessionId = 0;
 let startAbort = null;
+let selectedDeviceId = null;
 
 const video = document.getElementById('camera-video'); // ensure this exists
+
+// Device selection logic for rear camera
+async function selectRearCamera() {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const videoDevices = devices.filter(device => device.kind === 'videoinput');
+    
+    // Look for rear camera devices
+    const rearDevices = videoDevices.filter(device => {
+      const label = device.label.toLowerCase();
+      return label.includes('back') || label.includes('rear') || label.includes('environment');
+    });
+    
+    if (rearDevices.length === 1) {
+      return rearDevices[0].deviceId;
+    } else if (rearDevices.length > 1) {
+      // Use the first rear device found
+      return rearDevices[0].deviceId;
+    }
+    
+    // Fallback to any video device
+    return videoDevices[0]?.deviceId;
+  } catch (error) {
+    console.log('Device enumeration failed, using default constraints');
+    return null;
+  }
+}
 
 export async function startCamera() {
   if (currentStream?.active) return currentStream;
@@ -15,9 +43,16 @@ export async function startCamera() {
   const mySession = ++sessionId;
 
   try {
+    // Select the best rear camera device
+    const deviceId = await selectRearCamera();
+    
+    // Build constraints with device selection
+    const constraints = deviceId
+      ? { video: { deviceId: { exact: deviceId } }, audio: false }
+      : { video: { facingMode: { ideal: 'environment' } }, audio: false };
+
     const stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: 'environment' },
-      audio: false,
+      ...constraints,
       signal: startAbort.signal, // ignored by some browsers; harmless
     });
 

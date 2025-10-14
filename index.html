@@ -35,11 +35,11 @@
                     <h1>Identify a Bird</h1>
                     
                     <div class="capture-options">
-                        <button id="camera-btn" class="capture-option-btn active" onclick="showCameraSection()">
-                            Take photo
+                        <button id="live-camera-btn" class="capture-option-btn active">
+                            Use Live Camera
                         </button>
-                        <button id="upload-btn" class="capture-option-btn" onclick="showUploadSection()">
-                            Upload photo
+                        <button id="native-camera-btn" class="capture-option-btn mobile-only">
+                            Use Phone Camera/Photos
                         </button>
                     </div>
 
@@ -53,9 +53,15 @@
                         <canvas id="capture-canvas" style="display: none;"></canvas>
                     </div>
 
-                    <!-- Hidden file input for upload functionality -->
+                    <!-- Native file input for mobile camera/photos -->
+                    <input id="native-file-input" type="file" accept="image/*" capture="environment" style="display:none" />
+                    
+                    <!-- Legacy file input for desktop -->
                     <input type="file" id="image-input" accept="image/*" style="display: none;">
+                    
+                    <!-- Image previews -->
                     <img id="image-preview" class="image-preview" style="display: none;" alt="Image preview">
+                    <img id="photo-preview" style="display: none; max-width: 100%; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);" alt="Photo preview">
 
                     <button id="identify-btn" class="identify-btn" disabled>Identify Species</button>
 
@@ -97,7 +103,8 @@
         </main>
     </div>
 
-    <script type="module" src="js/camera.js?v=5"></script>
-    <script src="js/main.js?v=5"></script>
+    <script type="module" src="js/camera.js?v=6"></script>
+    <script type="module" src="js/native-capture.js?v=6"></script>
+    <script src="js/main.js?v=6"></script>
 </body>
 </html>

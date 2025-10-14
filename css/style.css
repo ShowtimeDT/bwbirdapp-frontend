@@ -1,5 +1,16 @@
 /* BWBirdApp Dark Modern Styles */
 
+/* Mobile-only elements */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

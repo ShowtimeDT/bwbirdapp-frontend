@@ -1,10 +1,14 @@
-// BWBirdApp Main JavaScript File - Refactored with race-proof camera
+// BWBirdApp Main JavaScript File - Enhanced with Mobile Native Capture
 
 // Global state
 let selectedImage = null;
+let processedBlob = null;
 
 // DOM element cache
 const elements = {};
+
+// Mobile detection
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,16 +26,23 @@ function initializeApp() {
     
     // Set up image capture functionality
     setupImageCapture();
+    
+    // Initialize native picker if on mobile
+    if (isMobile) {
+        import('./native-capture.js').then(module => {
+            module.initNativePicker(handleNativeImage);
+        });
+    }
 }
 
 // Cache frequently used DOM elements
 function cacheElements() {
     elements.navButtons = document.querySelectorAll('.nav-btn');
     elements.pages = document.querySelectorAll('.page');
+    elements.liveCameraBtn = document.getElementById('live-camera-btn');
+    elements.nativeCameraBtn = document.getElementById('native-camera-btn');
     elements.imageInput = document.getElementById('image-input');
     elements.identifyBtn = document.getElementById('identify-btn');
-    elements.cameraBtn = document.getElementById('camera-btn');
-    elements.uploadBtn = document.getElementById('upload-btn');
     elements.cameraSection = document.getElementById('camera-section');
     elements.capturePhotoBtn = document.getElementById('capture-photo-btn');
     elements.retakeBtn = document.getElementById('retake-btn');
@@ -39,6 +50,7 @@ function cacheElements() {
     elements.resultSection = document.getElementById('result-section');
     elements.resultContent = document.getElementById('result-content');
     elements.imagePreview = document.getElementById('image-preview');
+    elements.photoPreview = document.getElementById('photo-preview');
 }
 
 // Navigation functionality
@@ -69,16 +81,17 @@ function setupNavigation() {
 
 // Image capture functionality
 function setupImageCapture() {
-    // Handle camera/upload button clicks
-    if (elements.cameraBtn) {
-        elements.cameraBtn.addEventListener('click', showCameraSection);
+    // Handle live camera button
+    if (elements.liveCameraBtn) {
+        elements.liveCameraBtn.addEventListener('click', showLiveCamera);
     }
     
-    if (elements.uploadBtn) {
-        elements.uploadBtn.addEventListener('click', showUploadSection);
+    // Handle native camera button (mobile only)
+    if (elements.nativeCameraBtn) {
+        elements.nativeCameraBtn.addEventListener('click', showNativeCamera);
     }
     
-    // Handle file input change
+    // Handle legacy file input change (desktop fallback)
     if (elements.imageInput) {
         elements.imageInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
@@ -93,8 +106,8 @@ function setupImageCapture() {
     // Handle identify button click
     if (elements.identifyBtn) {
         elements.identifyBtn.addEventListener('click', function() {
-            if (selectedImage) {
-                identifySpecies(selectedImage);
+            if (selectedImage || processedBlob) {
+                identifySpecies(selectedImage || processedBlob);
             }
         });
     }
@@ -110,9 +123,15 @@ function setupImageCapture() {
     }
 }
 
-// Show camera section
-function showCameraSection() {
-    console.log('Switching to camera mode...');
+// Show live camera section
+function showLiveCamera() {
+    console.log('Switching to live camera mode...');
+    
+    // Stop any native picker
+    processedBlob = null;
+    if (elements.photoPreview) elements.photoPreview.style.display = 'none';
+    
+    // Show camera section
     if (elements.cameraSection) elements.cameraSection.style.display = 'block';
     
     // Import and call startCamera from camera.js
@@ -121,23 +140,39 @@ function showCameraSection() {
     });
 }
 
-// Show upload section
-function showUploadSection() {
-    console.log('Switching to upload mode...');
-    if (elements.cameraSection) elements.cameraSection.style.display = 'none';
+// Show native camera section (mobile only)
+function showNativeCamera() {
+    console.log('Switching to native camera mode...');
     
-    // Import and call stopCamera from camera.js
+    // Stop live camera
     import('./camera.js').then(module => {
         module.stopCamera();
     });
     
-    // Directly trigger the file input dialog
-    if (elements.imageInput) {
-        elements.imageInput.click();
-    }
+    // Hide camera section
+    if (elements.cameraSection) elements.cameraSection.style.display = 'none';
+    
+    // Open native picker
+    import('./native-capture.js').then(module => {
+        module.openNativePicker();
+    });
 }
 
-// Display image preview
+// Handle native image selection
+function handleNativeImage(blob) {
+    console.log('Native image selected and processed');
+    processedBlob = blob;
+    
+    // Show the processed image preview
+    if (elements.photoPreview) {
+        elements.photoPreview.style.display = 'block';
+    }
+    
+    // Enable identify button
+    if (elements.identifyBtn) elements.identifyBtn.disabled = false;
+}
+
+// Display image preview (for legacy file input)
 function displayImagePreview(file) {
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -155,7 +190,7 @@ function displayImagePreview(file) {
     reader.readAsDataURL(file);
 }
 
-// Capture photo from camera
+// Capture photo from live camera
 function capturePhoto() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -168,6 +203,7 @@ function capturePhoto() {
     canvas.toBlob(function(blob) {
         const file = new File([blob], 'captured-photo.jpg', { type: 'image/jpeg' });
         selectedImage = file;
+        processedBlob = blob;
         displayImagePreview(file);
         
         // Stop camera after capture
@@ -256,7 +292,8 @@ function displayIdentificationResult(result) {
             `<span style="color: #e74c3c; font-weight: bold;">Not currently in Virginia</span>`;
         
         // Get the current image source
-        const imageSrc = elements.imagePreview ? elements.imagePreview.src : '';
+        const imageSrc = elements.imagePreview ? elements.imagePreview.src : 
+                        elements.photoPreview ? elements.photoPreview.src : '';
         
         elements.resultContent.innerHTML = `
             <div class="identification-result">
@@ -287,6 +324,9 @@ function displayIdentificationResult(result) {
         // Hide the original photo preview since it's now in the result
         if (elements.imagePreview) {
             elements.imagePreview.style.display = 'none';
+        }
+        if (elements.photoPreview) {
+            elements.photoPreview.style.display = 'none';
         }
     } else {
         elements.resultContent.innerHTML = `
