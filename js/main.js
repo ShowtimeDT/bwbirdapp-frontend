@@ -44,7 +44,6 @@ function cacheElements() {
     elements.identifyBtn = document.getElementById('identify-btn');
     elements.cameraBtn = document.getElementById('camera-btn');
     elements.uploadBtn = document.getElementById('upload-btn');
-    elements.uploadSection = document.getElementById('upload-section');
     elements.cameraSection = document.getElementById('camera-section');
     elements.capturePhotoBtn = document.getElementById('capture-photo-btn');
     elements.retakeBtn = document.getElementById('retake-btn');
@@ -122,7 +121,6 @@ function setupImageCapture() {
 
 // Show camera section
 function showCameraSection() {
-    if (elements.uploadSection) elements.uploadSection.style.display = 'none';
     if (elements.cameraSection) elements.cameraSection.style.display = 'block';
     startCamera();
 }
@@ -130,7 +128,6 @@ function showCameraSection() {
 // Show upload section
 function showUploadSection() {
     if (elements.cameraSection) elements.cameraSection.style.display = 'none';
-    if (elements.uploadSection) elements.uploadSection.style.display = 'block';
     stopCamera();
     
     // Directly trigger the file input dialog

@@ -177,12 +177,12 @@ header {
     background: #555555;
 }
 
-.camera-section, .upload-section {
+.camera-section {
     display: none;
     margin-bottom: 30px;
 }
 
-.camera-section.active, .upload-section.active {
+.camera-section.active {
     display: block;
 }
 
@@ -221,31 +221,6 @@ header {
     transform: translateY(-1px);
 }
 
-.file-input-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.file-input-label {
-    background: #333333;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-}
-
-.file-input-label:hover {
-    background: #444444;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
 
 #image-input {
     display: none;
