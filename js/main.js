@@ -132,6 +132,11 @@ function showUploadSection() {
     if (elements.cameraSection) elements.cameraSection.style.display = 'none';
     if (elements.uploadSection) elements.uploadSection.style.display = 'block';
     stopCamera();
+    
+    // Directly trigger the file input dialog
+    if (elements.imageInput) {
+        elements.imageInput.click();
+    }
 }
 
 // Start camera
