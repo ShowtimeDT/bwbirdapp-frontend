@@ -1,0 +1,29 @@
+<div id="auth-modal" class="auth-modal" hidden>
+  <div class="auth-card">
+    <button class="auth-close" aria-label="Close">×</button>
+    <h2 id="auth-title">Sign In</h2>
+
+    <form id="auth-form">
+      <label>Email
+        <input id="auth-email" type="email" required autocomplete="email" />
+      </label>
+
+      <label>Password
+        <input id="auth-password" type="password" required minlength="6" autocomplete="current-password" />
+      </label>
+
+      <div id="username-wrap" hidden>
+        <label>Username (optional)
+          <input id="auth-username" type="text" minlength="2" maxlength="30" autocomplete="nickname" />
+        </label>
+      </div>
+
+      <button id="auth-submit" type="submit">Sign In</button>
+      <p class="auth-alt">
+        <span id="auth-switch-text">No account?</span>
+        <a href="#" id="auth-switch-link">Sign up</a>
+      </p>
+      <p id="auth-error" class="auth-error" hidden></p>
+    </form>
+  </div>
+</div>

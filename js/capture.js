@@ -1,7 +1,7 @@
 import { isMobile } from './device-id.js';
 import { openNativeCamera, openFilePicker, initNativeInput } from './native-capture.js';
 import { analyzeImage, addSighting } from '/js/api-client.js';
-import { onAuth, signInWithEmail } from '/js/auth.js';
+import { onAuth } from '/js/auth.js';
 
 const takeBtn = document.getElementById('btn-take-photo');
 const uploadBtn = document.getElementById('btn-upload-photo');
@@ -59,37 +59,28 @@ initNativeInput(async (blob) => {
 addBtn?.addEventListener('click', async () => {
   if (!lastBlob || !lastAnalysis?.commonName) return;
   
-  // Check auth first
-  onAuth(async (session) => {
-    if (!session) {
-      const email = prompt('Please sign in to add to collection. Enter your email:');
-      if (email) {
-        try {
-          await signInWithEmail(email);
-          alert('Check your email for the magic link!');
-        } catch (e) {
-          alert('Failed to send magic link: ' + e.message);
-        }
-      }
-      return;
-    }
-    
+  const bird = lastAnalysis.slug || lastAnalysis.commonName;
+  if (!bird) return alert('No bird detected');
+
+  let sessionUser = null;
+  await new Promise((resolve)=> onAuth((s)=>{ sessionUser = s; resolve(); }));
+  if (!sessionUser) {
+    window.dispatchEvent(new Event('auth:open')); // open modal
+    return;
+  }
+  try {
     addBtn.disabled = true; 
     addBtn.textContent = 'Adding…';
     
-    try {
-      await addSighting({ 
-        blob: lastBlob, 
-        bird: lastAnalysis.slug || lastAnalysis.commonName 
-      });
-      addBtn.textContent = 'Added!';
-      
-      // Broadcast collection update event
-      window.dispatchEvent(new CustomEvent('collection:updated'));
-    } catch (e) {
-      console.error(e);
-      addBtn.textContent = 'Failed, try again';
-      addBtn.disabled = false;
-    }
-  });
+    await addSighting({ blob: lastBlob, bird });
+    addBtn.textContent = 'Added!';
+    
+    // Broadcast collection update event
+    window.dispatchEvent(new CustomEvent('collection:updated'));
+  } catch (e) {
+    console.error(e);
+    addBtn.textContent = 'Failed, try again';
+    addBtn.disabled = false;
+    alert('Add failed: ' + (e?.message || 'unknown'));
+  }
 });

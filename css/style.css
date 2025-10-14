@@ -615,6 +615,30 @@ header {
     margin: 2rem 0;
 }
 
+/* Auth Modal Styles */
+.auth-modal[hidden]{ display:none !important; }
+.auth-modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.6); z-index:2000; }
+.auth-card{ background:#1f1f1f; color:#fff; border-radius:12px; padding:20px; width:min(420px, 92vw); box-shadow:0 10px 30px rgba(0,0,0,.4); }
+.auth-card label{ display:block; font-size:.9rem; margin:10px 0 4px; }
+.auth-card input{ width:100%; padding:10px; border-radius:8px; border:1px solid #3a3a3a; background:#121212; color:#fff; }
+.auth-card button[type=submit]{ margin-top:12px; width:100%; padding:10px; border-radius:8px; border:0; background:#4e9cff; color:#111; font-weight:600; cursor:pointer; }
+.auth-close{ float:right; border:0; background:transparent; color:#aaa; font-size:22px; cursor:pointer; }
+.auth-error{ color:#ff8b8b; margin-top:8px; }
+.auth-alt{ font-size:.9rem; margin-top:10px; color:#bbb; }
+.auth-alt a{ color:#fff; }
+
+/* Header Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-buttons .nav-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
 /* Modal Styles */
 .modal[hidden] { 
     display: none !important; 

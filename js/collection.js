@@ -1,5 +1,5 @@
 import { fetchCollection, fetchSightings } from '/js/api-client.js';
-import { onAuth, signInWithEmail } from '/js/auth.js';
+import { onAuth } from '/js/auth.js';
 
 const grid = document.getElementById('collection-grid');
 const modal = document.getElementById('bird-modal');
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   onAuth(async (session) => {
     if (!session) {
       console.log('Please sign in to view your collection.');
-      grid.innerHTML = '<div class="login-prompt"><p>Please sign in to view your collection.</p><button onclick="promptLogin()">Sign In</button></div>';
+      grid.innerHTML = '<div class="login-prompt"><p>Please sign in to view your collection.</p><button onclick="window.dispatchEvent(new Event(\'auth:open\'))">Sign In</button></div>';
       return;
     }
     
@@ -196,16 +196,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 });
-
-// Global function for login prompt
-window.promptLogin = async function() {
-  const email = prompt('Enter your email to sign in:');
-  if (email) {
-    try {
-      await signInWithEmail(email);
-      alert('Check your email for the magic link!');
-    } catch (e) {
-      alert('Failed to send magic link: ' + e.message);
-    }
-  }
-};

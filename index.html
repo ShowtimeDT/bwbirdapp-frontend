@@ -15,16 +15,7 @@
                 <h1>Welcome to BWBirdApp</h1>
                 <p>Discover and identify Virginia birds with AI-powered recognition.</p>
                 
-                <div class="login-section" id="login-section">
-                    <h2>Sign In</h2>
-                    <form id="login-form">
-                        <input type="email" id="login-email" placeholder="Enter your email" required>
-                        <button type="submit" class="action-btn primary">Send Magic Link</button>
-                    </form>
-                    <p class="login-status" id="login-status"></p>
-                </div>
-                
-                <div class="action-buttons" id="action-buttons" style="display: none;">
+                <div class="action-buttons" id="action-buttons">
                     <a href="/capture.html" class="action-btn primary">Identify a Bird</a>
                     <a href="/collection.html" class="action-btn secondary">View Collection</a>
                 </div>
@@ -46,10 +37,11 @@
             </section>
         </main>
     </div>
+    <div id="auth-root"></div>
     <script type="module" src="/js/config.js"></script>
     <script type="module" src="/js/auth.js"></script>
     <script type="module" src="/js/api-client.js"></script>
+    <script type="module" src="/js/auth-ui.js"></script>
     <script type="module" src="js/header.js"></script>
-    <script type="module" src="js/login.js"></script>
 </body>
 </html>
