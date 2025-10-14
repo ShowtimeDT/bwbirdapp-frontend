@@ -1,24 +1,5 @@
 /* BWBirdApp Dark Modern Styles */
 
-/* Mobile-only elements */
-.mobile-only {
-    display: none;
-}
-
-/* Desktop-only elements */
-.desktop-only {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .mobile-only {
-        display: block;
-    }
-    
-    .desktop-only {
-        display: none;
-    }
-}
 
 * {
     margin: 0;
@@ -197,49 +178,6 @@ header {
     background: #555555;
 }
 
-.camera-section {
-    display: none;
-    margin-bottom: 30px;
-}
-
-.camera-section.active {
-    display: block;
-}
-
-#camera-video {
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    border-radius: 15px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.camera-controls {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.capture-photo-btn, .retake-btn {
-    background: #333333;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.capture-photo-btn:hover, .retake-btn:hover {
-    background: #444444;
-    transform: translateY(-1px);
-}
 
 
 #image-input {

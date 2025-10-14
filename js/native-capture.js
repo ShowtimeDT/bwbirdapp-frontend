@@ -1,11 +1,19 @@
 // js/native-capture.js - Native camera/photo picker with image processing
-export function openNativeCamera({ preferRear = true } = {}) {
+export function openNativeCamera() {
   const input = document.getElementById('native-file-input');
   if (!input) return;
-  // Make sure attributes are set each time (some browsers cache them)
   input.setAttribute('accept', 'image/*');
-  input.setAttribute('capture', preferRear ? 'environment' : 'user');
-  input.value = ''; // allow re-selecting the same file
+  input.setAttribute('capture', 'environment'); // hint rear camera
+  input.value = ''; // allow re-selecting same file
+  input.click();
+}
+
+export function openFilePicker() {
+  const input = document.getElementById('native-file-input');
+  if (!input) return;
+  input.setAttribute('accept', 'image/*');
+  input.removeAttribute('capture'); // ensure photo library / Finder
+  input.value = '';
   input.click();
 }
 
