@@ -22,6 +22,18 @@ function initializeApp() {
     
     // Set up image capture functionality
     setupImageCapture();
+    
+    // Set up page visibility change listener to stop camera when page is hidden
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            stopCamera();
+        }
+    });
+    
+    // Set up beforeunload listener to stop camera when page is unloaded
+    window.addEventListener('beforeunload', function() {
+        stopCamera();
+    });
 }
 
 // Cache frequently used DOM elements
@@ -48,6 +60,11 @@ function setupNavigation() {
     elements.navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetPage = this.id.replace('nav-', '') + '-page';
+            
+            // Stop camera if navigating away from capture page
+            if (targetPage !== 'capture-page') {
+                stopCamera();
+            }
             
             // Update active nav button
             elements.navButtons.forEach(btn => btn.classList.remove('active'));
@@ -136,8 +153,13 @@ async function startCamera() {
 function stopCamera() {
     if (elements.video && elements.video.srcObject) {
         const tracks = elements.video.srcObject.getTracks();
-        tracks.forEach(track => track.stop());
+        tracks.forEach(track => {
+            track.stop();
+            console.log('Camera track stopped:', track.kind);
+        });
         elements.video.srcObject = null;
+        elements.video.pause();
+        console.log('Camera stopped successfully');
     }
 }
 
