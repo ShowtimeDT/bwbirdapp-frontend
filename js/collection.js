@@ -141,18 +141,27 @@ async function openBirdModal(bird) {
       });
     }
     
-    modal.removeAttribute('hidden');
+    showBirdModal();
   } catch (error) {
     console.error('Failed to load sightings:', error);
     modalSightings.innerHTML = '<p>Failed to load sightings.</p>';
-    modal.removeAttribute('hidden');
+    showBirdModal();
   }
+}
+
+// Show modal helper
+function showBirdModal() {
+  document.getElementById('bird-modal')?.removeAttribute('hidden');
+}
+
+// Hide modal helper  
+function hideBirdModal() {
+  document.getElementById('bird-modal')?.setAttribute('hidden', '');
 }
 
 // Close modal
 function closeModal() {
-  if (!modal) return;
-  modal.setAttribute('hidden', '');
+  hideBirdModal();
   if (modalSightings) modalSightings.innerHTML = '';
 }
 
@@ -170,7 +179,7 @@ window.addEventListener('collection:updated', () => {
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
   // Force modal closed on first load so no grey bar appears
-  closeModal();
+  document.getElementById('bird-modal')?.setAttribute('hidden', '');
   
   await loadVirginiaBirds();
   await loadCollection();

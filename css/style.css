@@ -542,3 +542,12 @@ header {
         font-size: 14px;
     }
 }
+
+/* Modal Styles */
+.modal[hidden] { 
+    display: none !important; 
+}
+
+.modal:not([hidden]) { 
+    display: flex; 
+}
