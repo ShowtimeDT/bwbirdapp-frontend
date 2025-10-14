@@ -1,4 +1,4 @@
-// BWBirdApp Main JavaScript File
+// BWBirdApp Main JavaScript File - Photo Display Flow Updated
 
 // Global state
 let selectedImage = null;
