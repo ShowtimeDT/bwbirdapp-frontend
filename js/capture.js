@@ -1,4 +1,4 @@
-import { isMobile, getDeviceId } from './device-id.js';
+import { isMobile } from './device-id.js';
 import { openNativeCamera, openFilePicker, initNativeInput } from './native-capture.js';
 import { analyzeImage, addSighting } from './api-client.js';
 
@@ -63,7 +63,6 @@ addBtn?.addEventListener('click', async () => {
   try {
     await addSighting({ 
       blob: lastBlob, 
-      deviceId: getDeviceId(), 
       bird: lastAnalysis.slug || lastAnalysis.commonName 
     });
     addBtn.textContent = 'Added!';

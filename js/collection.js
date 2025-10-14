@@ -1,5 +1,4 @@
-import { getDeviceId } from './device-id.js';
-import { fetchCollection, fetchSightings } from './api-client.js';
+import { fetchCollection } from './api-client.js';
 
 const grid = document.getElementById('collection-grid');
 const modal = document.getElementById('bird-modal');
@@ -24,8 +23,7 @@ async function loadVirginiaBirds() {
 // Load user's collection
 async function loadCollection() {
   try {
-    const deviceId = getDeviceId();
-    userCollection = await fetchCollection(deviceId);
+    userCollection = await fetchCollection();
     renderCollection();
   } catch (error) {
     console.error('Failed to load collection:', error);
@@ -116,37 +114,21 @@ function createBirdTile(bird, isFound) {
 async function openBirdModal(bird) {
   if (!modal) return;
   
-  try {
-    const deviceId = getDeviceId();
-    const sightings = await fetchSightings(deviceId, bird.slug);
-    
-    modalTitle.textContent = bird.commonName;
-    modalSightings.innerHTML = '';
-    
-    if (sightings.length === 0) {
-      modalSightings.innerHTML = '<p>No sightings found.</p>';
-    } else {
-      sightings.forEach(sighting => {
-        const sightingDiv = document.createElement('div');
-        sightingDiv.className = 'sighting-item';
-        sightingDiv.innerHTML = `
-          <div class="sighting-image">
-            ${sighting.photoUrl ? `<img src="${sighting.photoUrl}" alt="Sighting">` : '<div class="no-image">No image</div>'}
-          </div>
-          <div class="sighting-info">
-            <p class="sighting-date">${new Date(sighting.createdAt).toLocaleDateString()}</p>
-          </div>
-        `;
-        modalSightings.appendChild(sightingDiv);
-      });
-    }
-    
-    showBirdModal();
-  } catch (error) {
-    console.error('Failed to load sightings:', error);
-    modalSightings.innerHTML = '<p>Failed to load sightings.</p>';
-    showBirdModal();
-  }
+  modalTitle.textContent = bird.commonName;
+  modalSightings.innerHTML = '';
+  
+  // Show basic info for now (sightings endpoint removed)
+  modalSightings.innerHTML = `
+    <div class="sighting-item">
+      <div class="sighting-info">
+        <p><strong>Count:</strong> ${bird.userData.count} sighting${bird.userData.count > 1 ? 's' : ''}</p>
+        <p><strong>Latest:</strong> ${new Date(bird.userData.latestAt).toLocaleDateString()}</p>
+        ${bird.userData.primaryPhotoUrl ? `<img src="${bird.userData.primaryPhotoUrl}" alt="Primary photo" style="max-width: 200px; margin-top: 10px;">` : ''}
+      </div>
+    </div>
+  `;
+  
+  showBirdModal();
 }
 
 // Show modal helper
