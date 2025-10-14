@@ -190,7 +190,17 @@ async function startCamera() {
         });
         
         elements.video.srcObject = stream;
-        elements.video.play();
+        
+        // Handle video play promise to avoid AbortError
+        const playPromise = elements.video.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                console.log('Camera video started playing');
+            }).catch(error => {
+                console.log('Camera video play was prevented:', error);
+            });
+        }
+        
         console.log('Camera started successfully');
     } catch (error) {
         console.error('Error accessing camera:', error);
@@ -224,8 +234,15 @@ function stopCamera() {
     
     // Enhanced video element cleanup for Safari and other browsers
     if (elements.video) {
-        elements.video.pause(); // Ensure video is paused
-        elements.video.srcObject = null; // Clear srcObject
+        // Pause video safely without interrupting play promise
+        try {
+            elements.video.pause();
+        } catch (error) {
+            console.log('Video pause error (expected):', error.message);
+        }
+        
+        // Clear video source and reload
+        elements.video.srcObject = null;
         elements.video.removeAttribute('src'); // Important for Safari
         elements.video.load(); // Reload video element
     }
@@ -265,7 +282,14 @@ function forceStopCamera() {
     if (elements.video) {
         elements.video.srcObject = null;
         elements.video.src = '';
-        elements.video.pause();
+        
+        // Pause video safely without interrupting play promise
+        try {
+            elements.video.pause();
+        } catch (error) {
+            console.log('Force stop video pause error (expected):', error.message);
+        }
+        
         elements.video.load();
         elements.video.currentTime = 0;
     }
