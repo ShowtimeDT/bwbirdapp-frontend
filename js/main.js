@@ -2,6 +2,7 @@
 
 // Global state
 let selectedImage = null;
+let currentStream = null;
 
 // DOM element cache
 const elements = {};
@@ -127,7 +128,10 @@ function showCameraSection() {
 
 // Show upload section
 function showUploadSection() {
+    console.log('Switching to upload mode...');
     if (elements.cameraSection) elements.cameraSection.style.display = 'none';
+    
+    // Force stop camera completely
     stopCamera();
     
     // Directly trigger the file input dialog
@@ -139,12 +143,18 @@ function showUploadSection() {
 // Start camera
 async function startCamera() {
     try {
+        // Stop any existing camera first
+        stopCamera();
+        
         const stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'environment' }
         });
         
+        // Store the stream reference
+        currentStream = stream;
         elements.video.srcObject = stream;
         elements.video.play();
+        console.log('Camera started successfully');
     } catch (error) {
         console.error('Error accessing camera:', error);
         alert('Unable to access camera. Please check permissions.');
@@ -153,16 +163,30 @@ async function startCamera() {
 
 // Stop camera
 function stopCamera() {
-    if (elements.video && elements.video.srcObject) {
-        const tracks = elements.video.srcObject.getTracks();
+    console.log('Stopping camera...');
+    
+    // Stop tracks from current stream if available
+    if (currentStream) {
+        const tracks = currentStream.getTracks();
         tracks.forEach(track => {
             track.stop();
             console.log('Camera track stopped:', track.kind);
         });
+        currentStream = null;
+    }
+    
+    // Also stop tracks from video element
+    if (elements.video && elements.video.srcObject) {
+        const tracks = elements.video.srcObject.getTracks();
+        tracks.forEach(track => {
+            track.stop();
+            console.log('Video track stopped:', track.kind);
+        });
         elements.video.srcObject = null;
         elements.video.pause();
-        console.log('Camera stopped successfully');
     }
+    
+    console.log('Camera stopped successfully');
 }
 
 // Capture photo from camera
