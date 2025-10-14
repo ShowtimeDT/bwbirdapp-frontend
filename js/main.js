@@ -3,6 +3,7 @@
 // Global state
 let selectedImage = null;
 let currentStream = null;
+let isCameraActive = false;
 
 // DOM element cache
 const elements = {};
@@ -35,6 +36,14 @@ function initializeApp() {
     window.addEventListener('beforeunload', function() {
         forceStopCamera();
     });
+    
+    // Periodic check to ensure camera is stopped when it shouldn't be active
+    setInterval(function() {
+        if (!isCameraActive && currentStream) {
+            console.log('Camera should not be active - force stopping');
+            forceStopCamera();
+        }
+    }, 1000); // Check every second
 }
 
 // Cache frequently used DOM elements
@@ -153,6 +162,7 @@ async function startCamera() {
         
         // Store the stream reference
         currentStream = stream;
+        isCameraActive = true;
         elements.video.srcObject = stream;
         elements.video.play();
         console.log('Camera started successfully');
@@ -199,19 +209,41 @@ function stopCamera() {
 // Force stop camera - more aggressive cleanup
 function forceStopCamera() {
     console.log('Force stopping camera...');
-    stopCamera();
+    
+    // Stop tracks from current stream
+    if (currentStream) {
+        const tracks = currentStream.getTracks();
+        tracks.forEach(track => {
+            track.stop();
+            console.log('Current stream track stopped:', track.kind, track.label);
+        });
+        currentStream = null;
+    }
+    
+    // Stop tracks from video element
+    if (elements.video && elements.video.srcObject) {
+        const tracks = elements.video.srcObject.getTracks();
+        tracks.forEach(track => {
+            track.stop();
+            console.log('Video element track stopped:', track.kind, track.label);
+        });
+        elements.video.srcObject = null;
+    }
     
     // Additional cleanup
     if (elements.video) {
         elements.video.srcObject = null;
         elements.video.src = '';
+        elements.video.pause();
         elements.video.load();
+        elements.video.currentTime = 0;
     }
     
     // Clear any remaining stream references
     currentStream = null;
+    isCameraActive = false;
     
-    console.log('Camera force stopped');
+    console.log('Camera force stopped - all tracks should be stopped');
 }
 
 // Capture photo from camera
