@@ -27,13 +27,13 @@ function initializeApp() {
     // Set up page visibility change listener to stop camera when page is hidden
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            stopCamera();
+            forceStopCamera();
         }
     });
     
     // Set up beforeunload listener to stop camera when page is unloaded
     window.addEventListener('beforeunload', function() {
-        stopCamera();
+        forceStopCamera();
     });
 }
 
@@ -61,9 +61,9 @@ function setupNavigation() {
         button.addEventListener('click', function() {
             const targetPage = this.id.replace('nav-', '') + '-page';
             
-            // Stop camera if navigating away from capture page
+            // Force stop camera if navigating away from capture page
             if (targetPage !== 'capture-page') {
-                stopCamera();
+                forceStopCamera();
             }
             
             // Update active nav button
@@ -122,6 +122,7 @@ function setupImageCapture() {
 
 // Show camera section
 function showCameraSection() {
+    console.log('Switching to camera mode...');
     if (elements.cameraSection) elements.cameraSection.style.display = 'block';
     startCamera();
 }
@@ -132,7 +133,7 @@ function showUploadSection() {
     if (elements.cameraSection) elements.cameraSection.style.display = 'none';
     
     // Force stop camera completely
-    stopCamera();
+    forceStopCamera();
     
     // Directly trigger the file input dialog
     if (elements.imageInput) {
@@ -186,7 +187,31 @@ function stopCamera() {
         elements.video.pause();
     }
     
+    // Force clear video element
+    if (elements.video) {
+        elements.video.src = '';
+        elements.video.load();
+    }
+    
     console.log('Camera stopped successfully');
+}
+
+// Force stop camera - more aggressive cleanup
+function forceStopCamera() {
+    console.log('Force stopping camera...');
+    stopCamera();
+    
+    // Additional cleanup
+    if (elements.video) {
+        elements.video.srcObject = null;
+        elements.video.src = '';
+        elements.video.load();
+    }
+    
+    // Clear any remaining stream references
+    currentStream = null;
+    
+    console.log('Camera force stopped');
 }
 
 // Capture photo from camera
