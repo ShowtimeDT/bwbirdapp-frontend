@@ -6,6 +6,11 @@ let selectedDeviceId = null;
 
 const video = document.getElementById('camera-video'); // ensure this exists
 
+// Desktop detection helper
+export function isDesktop() {
+  return !/iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+}
+
 // Device selection logic for rear camera
 async function selectRearCamera() {
   try {

@@ -5,9 +5,18 @@
     display: none;
 }
 
+/* Desktop-only elements */
+.desktop-only {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .mobile-only {
         display: block;
+    }
+    
+    .desktop-only {
+        display: none;
     }
 }
 

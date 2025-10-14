@@ -1,4 +1,4 @@
-// BWBirdApp Main JavaScript File - Enhanced with Mobile Native Capture
+// BWBirdApp Main JavaScript File - Native Mobile + Desktop Live Camera
 
 // Global state
 let selectedImage = null;
@@ -7,8 +7,8 @@ let processedBlob = null;
 // DOM element cache
 const elements = {};
 
-// Mobile detection
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// Platform detection
+const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -27,10 +27,10 @@ function initializeApp() {
     // Set up image capture functionality
     setupImageCapture();
     
-    // Initialize native picker if on mobile
+    // Initialize native capture on mobile
     if (isMobile) {
         import('./native-capture.js').then(module => {
-            module.initNativePicker(handleNativeImage);
+            module.initNativeCapture(handleNativeImage);
         });
     }
 }
@@ -39,8 +39,8 @@ function initializeApp() {
 function cacheElements() {
     elements.navButtons = document.querySelectorAll('.nav-btn');
     elements.pages = document.querySelectorAll('.page');
+    elements.takePhotoBtn = document.getElementById('take-photo-btn');
     elements.liveCameraBtn = document.getElementById('live-camera-btn');
-    elements.nativeCameraBtn = document.getElementById('native-camera-btn');
     elements.imageInput = document.getElementById('image-input');
     elements.identifyBtn = document.getElementById('identify-btn');
     elements.cameraSection = document.getElementById('camera-section');
@@ -81,14 +81,24 @@ function setupNavigation() {
 
 // Image capture functionality
 function setupImageCapture() {
-    // Handle live camera button
-    if (elements.liveCameraBtn) {
-        elements.liveCameraBtn.addEventListener('click', showLiveCamera);
+    // Handle "Take Photo" button (mobile: native, desktop: live camera)
+    if (elements.takePhotoBtn) {
+        elements.takePhotoBtn.addEventListener('click', function() {
+            if (isMobile) {
+                // Mobile: open native camera picker
+                import('./native-capture.js').then(module => {
+                    module.openNativeCamera({ preferRear: true });
+                });
+            } else {
+                // Desktop: start live camera
+                showLiveCamera();
+            }
+        });
     }
     
-    // Handle native camera button (mobile only)
-    if (elements.nativeCameraBtn) {
-        elements.nativeCameraBtn.addEventListener('click', showNativeCamera);
+    // Handle "Use Live Camera" button (desktop only)
+    if (elements.liveCameraBtn) {
+        elements.liveCameraBtn.addEventListener('click', showLiveCamera);
     }
     
     // Handle legacy file input change (desktop fallback)
@@ -123,7 +133,7 @@ function setupImageCapture() {
     }
 }
 
-// Show live camera section
+// Show live camera section (desktop only)
 function showLiveCamera() {
     console.log('Switching to live camera mode...');
     
@@ -140,25 +150,7 @@ function showLiveCamera() {
     });
 }
 
-// Show native camera section (mobile only)
-function showNativeCamera() {
-    console.log('Switching to native camera mode...');
-    
-    // Stop live camera
-    import('./camera.js').then(module => {
-        module.stopCamera();
-    });
-    
-    // Hide camera section
-    if (elements.cameraSection) elements.cameraSection.style.display = 'none';
-    
-    // Open native picker
-    import('./native-capture.js').then(module => {
-        module.openNativePicker();
-    });
-}
-
-// Handle native image selection
+// Handle native image selection (mobile only)
 function handleNativeImage(blob) {
     console.log('Native image selected and processed');
     processedBlob = blob;
@@ -190,7 +182,7 @@ function displayImagePreview(file) {
     reader.readAsDataURL(file);
 }
 
-// Capture photo from live camera
+// Capture photo from live camera (desktop only)
 function capturePhoto() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -218,7 +210,7 @@ function capturePhoto() {
     }, 'image/jpeg', 0.8);
 }
 
-// Retake photo
+// Retake photo (desktop only)
 function retakePhoto() {
     if (elements.capturePhotoBtn) elements.capturePhotoBtn.style.display = 'block';
     if (elements.retakeBtn) elements.retakeBtn.style.display = 'none';
