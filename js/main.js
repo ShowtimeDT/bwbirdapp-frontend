@@ -1,9 +1,7 @@
-// BWBirdApp Main JavaScript File - Photo Display Flow Updated
+// BWBirdApp Main JavaScript File - Refactored with race-proof camera
 
 // Global state
 let selectedImage = null;
-let currentStream = null;
-let isCameraActive = false;
 
 // DOM element cache
 const elements = {};
@@ -24,37 +22,6 @@ function initializeApp() {
     
     // Set up image capture functionality
     setupImageCapture();
-    
-    // Set up page visibility change listener to stop camera when page is hidden
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            forceStopCamera();
-        }
-    });
-    
-    // Set up beforeunload listener to stop camera when page is unloaded
-    window.addEventListener('beforeunload', function() {
-        forceStopCamera();
-    });
-    
-    // Additional event listeners for comprehensive camera cleanup
-    window.addEventListener('pagehide', function() {
-        console.log('Page hide event - stopping camera');
-        forceStopCamera();
-    });
-    
-    window.addEventListener('blur', function() {
-        console.log('Window blur event - stopping camera');
-        forceStopCamera();
-    });
-    
-    // Periodic check to ensure camera is stopped when it shouldn't be active
-    setInterval(function() {
-        if (!isCameraActive && currentStream) {
-            console.log('Camera should not be active - force stopping');
-            forceStopCamera();
-        }
-    }, 1000); // Check every second
 }
 
 // Cache frequently used DOM elements
@@ -81,9 +48,12 @@ function setupNavigation() {
         button.addEventListener('click', function() {
             const targetPage = this.id.replace('nav-', '') + '-page';
             
-            // Force stop camera if navigating away from capture page
+            // Stop camera if navigating away from capture page
             if (targetPage !== 'capture-page') {
-                forceStopCamera();
+                // Import and call stopCamera from camera.js
+                import('./camera.js').then(module => {
+                    module.stopCamera();
+                });
             }
             
             // Update active nav button
@@ -110,8 +80,8 @@ function setupImageCapture() {
     
     // Handle file input change
     if (elements.imageInput) {
-        elements.imageInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
+        elements.imageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
             if (file) {
                 selectedImage = file;
                 displayImagePreview(file);
@@ -144,7 +114,11 @@ function setupImageCapture() {
 function showCameraSection() {
     console.log('Switching to camera mode...');
     if (elements.cameraSection) elements.cameraSection.style.display = 'block';
-    startCamera();
+    
+    // Import and call startCamera from camera.js
+    import('./camera.js').then(module => {
+        module.startCamera();
+    });
 }
 
 // Show upload section
@@ -152,185 +126,15 @@ function showUploadSection() {
     console.log('Switching to upload mode...');
     if (elements.cameraSection) elements.cameraSection.style.display = 'none';
     
-    // Force stop camera completely
-    forceStopCamera();
+    // Import and call stopCamera from camera.js
+    import('./camera.js').then(module => {
+        module.stopCamera();
+    });
     
     // Directly trigger the file input dialog
     if (elements.imageInput) {
         elements.imageInput.click();
     }
-}
-
-// Start camera
-async function startCamera() {
-    try {
-        // If camera already active, return immediately to avoid duplicate streams
-        if (currentStream) {
-            console.log('Camera already active, skipping start');
-            return;
-        }
-        
-        // Stop any existing camera first
-        stopCamera();
-        
-        const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: 'environment' }
-        });
-        
-        // Store the stream reference and mark as active
-        currentStream = stream;
-        isCameraActive = true;
-        
-        // Set up track end handlers to force cleanup if tracks end unexpectedly
-        stream.getTracks().forEach(track => {
-            track.onended = () => {
-                console.log('Track ended unexpectedly, force stopping camera');
-                forceStopCamera();
-            };
-        });
-        
-        elements.video.srcObject = stream;
-        
-        // Handle video play promise to avoid AbortError
-        const playPromise = elements.video.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                console.log('Camera video started playing');
-            }).catch(error => {
-                console.log('Camera video play was prevented:', error);
-            });
-        }
-        
-        console.log('Camera started successfully');
-    } catch (error) {
-        console.error('Error accessing camera:', error);
-        alert('Unable to access camera. Please check permissions.');
-    }
-}
-
-// Stop camera
-function stopCamera() {
-    console.log('Stopping camera...');
-    
-    // Stop tracks from current stream if available
-    if (currentStream) {
-        const tracks = currentStream.getTracks();
-        tracks.forEach(track => {
-            track.stop();
-            console.log('Camera track stopped:', track.kind);
-        });
-        currentStream = null;
-    }
-    
-    // Also stop tracks from video element
-    if (elements.video && elements.video.srcObject) {
-        const tracks = elements.video.srcObject.getTracks();
-        tracks.forEach(track => {
-            track.stop();
-            console.log('Video track stopped:', track.kind);
-        });
-        elements.video.srcObject = null;
-    }
-    
-    // Enhanced video element cleanup for Safari and other browsers
-    if (elements.video) {
-        // Pause video safely without interrupting play promise
-        try {
-            elements.video.pause();
-        } catch (error) {
-            console.log('Video pause error (expected):', error.message);
-        }
-        
-        // Clear video source and reload
-        elements.video.srcObject = null;
-        elements.video.removeAttribute('src'); // Important for Safari
-        elements.video.load(); // Reload video element
-    }
-    
-    // Mark camera as inactive
-    currentStream = null;
-    isCameraActive = false;
-    
-    console.log('Camera stopped successfully');
-}
-
-// Force stop camera - more aggressive cleanup
-function forceStopCamera() {
-    console.log('Force stopping camera...');
-    
-    // Stop tracks from current stream
-    if (currentStream) {
-        const tracks = currentStream.getTracks();
-        tracks.forEach(track => {
-            track.stop();
-            console.log('Current stream track stopped:', track.kind, track.label);
-        });
-        currentStream = null;
-    }
-    
-    // Stop tracks from video element
-    if (elements.video && elements.video.srcObject) {
-        const tracks = elements.video.srcObject.getTracks();
-        tracks.forEach(track => {
-            track.stop();
-            console.log('Video element track stopped:', track.kind, track.label);
-        });
-        elements.video.srcObject = null;
-    }
-    
-    // Additional cleanup
-    if (elements.video) {
-        elements.video.srcObject = null;
-        elements.video.src = '';
-        
-        // Pause video safely without interrupting play promise
-        try {
-            elements.video.pause();
-        } catch (error) {
-            console.log('Force stop video pause error (expected):', error.message);
-        }
-        
-        elements.video.load();
-        elements.video.currentTime = 0;
-    }
-    
-    // Clear any remaining stream references
-    currentStream = null;
-    isCameraActive = false;
-    
-    console.log('Camera force stopped - all tracks should be stopped');
-}
-
-// Capture photo from camera
-function capturePhoto() {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    
-    canvas.width = elements.video.videoWidth;
-    canvas.height = elements.video.videoHeight;
-    
-    ctx.drawImage(elements.video, 0, 0);
-    
-    canvas.toBlob(function(blob) {
-        const file = new File([blob], 'captured-photo.jpg', { type: 'image/jpeg' });
-        selectedImage = file;
-        displayImagePreview(file);
-        
-        // Stop camera
-        stopCamera();
-        
-        // Automatically analyze the captured photo
-        setTimeout(() => {
-            identifySpecies(file);
-        }, 1000); // Small delay to let UI update
-    }, 'image/jpeg', 0.8);
-}
-
-// Retake photo
-function retakePhoto() {
-    if (elements.capturePhotoBtn) elements.capturePhotoBtn.style.display = 'block';
-    if (elements.retakeBtn) elements.retakeBtn.style.display = 'none';
-    startCamera();
 }
 
 // Display image preview
@@ -349,6 +153,44 @@ function displayImagePreview(file) {
         }
     };
     reader.readAsDataURL(file);
+}
+
+// Capture photo from camera
+function capturePhoto() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = elements.video.videoWidth;
+    canvas.height = elements.video.videoHeight;
+    
+    ctx.drawImage(elements.video, 0, 0);
+    
+    canvas.toBlob(function(blob) {
+        const file = new File([blob], 'captured-photo.jpg', { type: 'image/jpeg' });
+        selectedImage = file;
+        displayImagePreview(file);
+        
+        // Stop camera after capture
+        import('./camera.js').then(module => {
+            module.stopCamera();
+        });
+        
+        // Automatically analyze the captured photo
+        setTimeout(() => {
+            identifySpecies(file);
+        }, 1000); // Small delay to let UI update
+    }, 'image/jpeg', 0.8);
+}
+
+// Retake photo
+function retakePhoto() {
+    if (elements.capturePhotoBtn) elements.capturePhotoBtn.style.display = 'block';
+    if (elements.retakeBtn) elements.retakeBtn.style.display = 'none';
+    
+    // Restart camera for retake
+    import('./camera.js').then(module => {
+        module.startCamera();
+    });
 }
 
 // Identify species using AI
@@ -456,5 +298,5 @@ function displayIdentificationResult(result) {
 
 // Add to Pokédex (placeholder function)
 async function addToPokedex(commonName, scientificName, imageUrl) {
-    alert(`Added ${commonName} to your Pokédex! (This feature requires authentication)`);
+    alert(`Added ${commonName} to your collection! (This feature requires authentication)`);
 }
